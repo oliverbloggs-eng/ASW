@@ -1,0 +1,13 @@
+/* Page styles: 404, privacy, terms */
+.lg-sec{background:#F2F2F0;padding:72px 0 88px;flex:0 0 auto}
+.lg-wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.lg-center{text-align:center}
+.lg-eye{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#1B4584}
+.lg-center .lg-eye{justify-content:center}
+.lg-dot{width:6px;height:6px;border-radius:50%;background:#94BBE4}
+.lg-h1{margin:0 0 16px;font-family:Marcellus,serif;font-weight:400;font-size:34px;line-height:1.1;color:#0E1F3D}
+.lg-p{margin:0 0 16px;font-size:16px;line-height:1.7;color:#33445F}
+.lg-btns{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;margin:28px 0 0}
+.lg-link{font-weight:600;color:#0F74B5;text-decoration:underline;text-underline-offset:4px}
+@media (min-width:641px){.lg-sec{padding:96px 0 112px}.lg-h1{font-size:44px}.lg-p{font-size:17px}}
+@media (min-width:1025px){.lg-sec{padding:120px 0 140px}.lg-h1{font-size:56px}.lg-p{font-size:18px}}

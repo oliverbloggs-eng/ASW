@@ -1,0 +1,4 @@
+# REMOVE BEFORE LAUNCH: the copy on this site is sample copy for client review.
+# Delete the Disallow rule below (and the robots meta tag on every page) when the firm approves the copy.
+User-agent: *
+Disallow: /

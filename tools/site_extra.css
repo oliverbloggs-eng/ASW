@@ -1,0 +1,31 @@
+
+/* ===== static site additions ===== */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+:where(img[width][height]){width:auto;height:auto}
+main{display:contents}
+.skip{position:absolute;left:-9999px;top:8px;z-index:200;padding:12px 18px;border-radius:8px;background:#0E1F3D;color:#ffffff;font-weight:600}
+.skip:focus{left:8px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+:focus-visible{outline:3px solid #0F74B5;outline-offset:3px}
+.ft :focus-visible{outline-color:#94BBE4}
+[id]{scroll-margin-top:96px}
+@media (prefers-reduced-motion:no-preference){
+  .js .nv,.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .js .nv.in,.js .rv.in{opacity:1;transform:none}
+}
+.wa-w{position:fixed;right:16px;bottom:20px;z-index:60;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,visibility 0s linear .3s}
+.wa-w.show{opacity:1;visibility:visible;transform:none;transition:opacity .3s ease,transform .3s ease}
+.wa-w.hide{opacity:0;visibility:hidden}
+.wa-b{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:9999px;background:#25d366;box-shadow:0 8px 24px rgba(14,31,61,.28)}
+@media (min-width:641px){.wa-w{right:24px;bottom:24px}.wa-b{width:56px;height:56px}}
+@media (prefers-reduced-motion:reduce){.wa-w{transition:none}}
+.mp-embed{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.pg-about .hw3-c,.pg-about .hs-c{transition:background .3s ease,color .3s ease,border-color .3s ease}
+.pg-about .hw3-s.reached .hw3-c,.pg-about .hw-m .ac.reached .hs-c{background:#0E1F3D;border-color:#0E1F3D;color:#ffffff}
+.pg-about .hw3-s.reached::after,.pg-about .hw-m .ac.reached::after{background:#0E1F3D}
+@media (prefers-reduced-motion:reduce){.pg-about .hw3-c,.pg-about .hs-c{transition:none}}
+.ct-f.is-err .ct-in{border-color:#B93815;box-shadow:0 0 0 1px #B93815}
+.ct-f.is-err .ct-err{display:block}
+.ct-submit[disabled]{opacity:.7;cursor:wait}
+.ct-formerr{margin:0;font-size:15px;line-height:20px;font-weight:500;color:#B93815}

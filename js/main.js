@@ -111,7 +111,7 @@
     var onScroll = function () {
       ticking = false;
       var y = window.scrollY + 170, best = 0;
-      secs.forEach(function (s, i) { if (s && s.offsetTop <= y) best = i; });
+      secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top + window.scrollY <= y) best = i; });
       if (best !== cur) { cur = best; setOn(best); }
     };
     window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
@@ -119,19 +119,15 @@
     secs.forEach(function (s) { if (s) s.style.scrollMarginTop = '150px'; });
   }
 
-  /* ---------- About page: timeline scroll progress ---------- */
-  var steps = $$('.pg-about .hw3-s, .pg-about .hw-m .ac');
-  if (steps.length) {
+  /* ---------- Home: How We Work timeline progress (fallback when scroll-driven CSS is unsupported) ---------- */
+  var steps = $$('.hw3-s');
+  if (steps.length && !(window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()')) && !reduce) {
     var mark = function () {
-      var line = window.innerHeight * 0.62;
-      steps.forEach(function (s, i) {
-        if (!s.offsetParent) return;
-        s.classList.toggle('reached', i % 4 === 0 || reduce || s.getBoundingClientRect().top < line);
-      });
+      var line = window.innerHeight * 0.6;
+      steps.forEach(function (s) { s.classList.toggle('reached', s.getBoundingClientRect().top < line); });
     };
-    steps.forEach(function (s) { s.classList.add('reached'); });
-    if (!reduce) { steps.forEach(function (s) { s.classList.remove('reached'); }); window.addEventListener('scroll', mark, { passive: true }); window.addEventListener('resize', mark); mark(); }
-  }
+    window.addEventListener('scroll', mark, { passive: true }); window.addEventListener('resize', mark); mark();
+  } else if (steps.length && reduce) { steps.forEach(function (s) { s.classList.add('reached'); }); }
 
   /* ---------- floating WhatsApp button ---------- */
   var wa = $('#wa');

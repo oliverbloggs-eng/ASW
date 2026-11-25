@@ -14,7 +14,7 @@ bg=Image.new('RGBA',(180,180),(255,255,255,255)); bg.alpha_composite(sq(180)); b
 src=open('faq.html',encoding='utf-8').read()
 head_end=src.index('<main id="main">'); foot=src[src.index('</main>')+7:]
 hdr=src[src.index('<body'):head_end]
-def mk(out,title,desc,main,css='faq'):
+def mk(out,title,desc,main,css='legal'):
     h=src[:src.index('<body')]
     h=re.sub(r'<title>.*?</title>','<title>%s</title>'%title,h)
     h=re.sub(r'(<meta name="description" content=")[^"]*','\\g<1>'+desc,h)

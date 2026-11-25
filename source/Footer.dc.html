@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site footer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.ft{background-color:#0a1f4e;background-image:linear-gradient(rgba(10,31,78,0.93),rgba(10,31,78,0.97)),url(../assets/hero.jpg);background-size:cover;background-position:center}
+.ft a{text-decoration:none}
+.ft-link:hover{color:#01d4ff !important}
+.ft-talk:hover{background:#01d4ff !important}
+.ft a:focus-visible{outline:2px solid #01d4ff;outline-offset:3px;border-radius:4px}
+</style>
+</helmet>
+<footer class="ft" style="width:100%;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;color:#f9fafc">
+  <div style="max-width:1200px;margin:0 auto;padding:72px 32px 56px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;margin-bottom:56px">
+      <h2 style="margin:0;font-size:clamp(36px,5vw,56px);line-height:1.05;font-weight:600;letter-spacing:-1px;color:#f9fafc">Let's Talk</h2>
+      <a class="ft-talk" href="Contact.dc.html" aria-label="Contact us" style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:9999px;background:#f9fafc;color:#0a1f4e">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:48px 40px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01d4ff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <div style="font-size:18px;line-height:24px;font-weight:600">Phone:</div>
+            <a class="ft-link" href="tel:+254788685911" style="display:inline-block;margin-top:4px;font-size:15px;line-height:24px;color:#f9fafc">+254 788 685 911</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01d4ff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div style="font-size:18px;line-height:24px;font-weight:600">Address:</div>
+            <div style="margin-top:4px;font-size:15px;line-height:24px;color:#f9fafc;max-width:300px">Tourism Fund Building, Mezzanine Floor, Office M08, Off-Bishop Rd, Community Area, Nairobi, Kenya</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01d4ff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div>
+            <div style="font-size:18px;line-height:24px;font-weight:600">Email:</div>
+            <a class="ft-link" href="mailto:info@aswlaw.africa" style="display:inline-block;margin-top:4px;font-size:15px;line-height:24px;color:#f9fafc">info@aswlaw.africa</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:8px 0">
+        <img src="../assets/logo_light.png" alt="ASW Law Advocates LLP" style="height:112px;width:auto;display:block">
+        <p style="margin:0;font-size:15px;line-height:24px;color:#f9fafc">We offer world-class legal representation.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-size:18px;line-height:24px;font-weight:600;padding-bottom:12px;border-bottom:1px solid rgba(249,250,252,0.18)">Areas of Practice</div>
+        <a class="ft-link" href="Areas.dc.html" style="font-size:15px;line-height:22px;color:#f9fafc">Dispute Resolution</a>
+        <a class="ft-link" href="Areas.dc.html" style="font-size:15px;line-height:22px;color:#f9fafc">Commercial and Corporate</a>
+        <a class="ft-link" href="Areas.dc.html" style="font-size:15px;line-height:22px;color:#f9fafc">Public Procurement and Tax</a>
+        <a class="ft-link" href="Areas.dc.html" style="font-size:15px;line-height:22px;color:#f9fafc">Property &amp; Real Estate</a>
+        <a class="ft-link" href="Areas.dc.html" style="font-size:15px;line-height:22px;color:#f9fafc">Private Client</a>
+        <a class="ft-link" href="Areas.dc.html" style="font-size:15px;line-height:22px;color:#f9fafc">Employment and Pensions</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(249,250,252,0.16)">
+    <div style="max-width:1200px;margin:0 auto;padding:20px 32px;text-align:center;font-size:13px;line-height:18px;color:#8d97ae;font-style:italic">© Copyright 2026 ASW Law Advocates LLP. All Rights Reserved.</div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

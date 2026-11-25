@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site header</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.hd a{text-decoration:none}
+.nav-link:hover{color:#01758c !important}
+.util-link:hover{color:#01d4ff !important}
+.btn-book:hover{background:#08193e !important}
+.hd a:focus-visible{outline:2px solid #01d4ff;outline-offset:3px;border-radius:4px}
+</style>
+</helmet>
+<header class="hd" style="width:100%;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:#ffffff;border-bottom:1px solid #d5d9e2">
+  <div style="background:#08193e;color:#f9fafc">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;min-height:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;font-size:13px;line-height:18px;font-weight:500">
+      <div style="display:flex;align-items:center;gap:8px">
+        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#01d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Mon to Fri: 9.00am to 5.00pm</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 28px">
+        <a class="util-link" href="mailto:info@aswlaw.africa" style="display:flex;align-items:center;gap:8px;color:#f9fafc">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#01d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>info@aswlaw.africa</span>
+        </a>
+        <a class="util-link" href="tel:+254788685911" style="display:flex;align-items:center;gap:8px;color:#f9fafc">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#01d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+254 788 685 911</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:10px 32px;min-height:84px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 32px">
+    <a href="Main.dc.html" aria-label="ASW Law Advocates LLP, home" style="display:block;line-height:0">
+      <img src="../assets/logo.png" alt="ASW Law Advocates LLP" style="height:64px;width:auto;display:block">
+    </a>
+    <nav aria-label="Primary" style="display:flex;flex-wrap:wrap;align-items:center;gap:4px 28px">
+      <sc-for list="{{links}}" as="l" hint-placeholder-count="5">
+        <a class="nav-link" href="{{l.href}}" style="{{l.style}}">{{l.label}}</a>
+      </sc-for>
+      <a class="btn-book" href="Book.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 22px;background:#0a1f4e;color:#f9fafc;border-radius:4px;font-size:15px;font-weight:600">Book Appointment</a>
+    </nav>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["home","about","areas","insights","contact","book"],"default":"home"},"$preview":{"width":1440,"height":124}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active ?? 'home';
+    const base = "display:inline-flex;align-items:center;min-height:44px;font-size:15px;line-height:20px;text-decoration:none;border-bottom:2px solid ";
+    const links = [
+      { key: 'home', label: 'Home', href: 'Main.dc.html' },
+      { key: 'about', label: 'About Us', href: 'About.dc.html' },
+      { key: 'areas', label: 'Areas Of Practice', href: 'Areas.dc.html' },
+      { key: 'insights', label: 'Insights', href: 'Insights.dc.html' },
+      { key: 'contact', label: 'Contact Us', href: 'Contact.dc.html' }
+    ].map((l) => ({
+      ...l,
+      style: l.key === active
+        ? base + "#01758c;color:#0a1f4e;font-weight:600"
+        : base + "transparent;color:#46567a;font-weight:500"
+    }));
+    return { links };
+  }
+}
+</script>
+</body>
+</html>

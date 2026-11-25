@@ -1,0 +1,611 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-25T10:20:00Z"
+ },
+ "title": "ASW Law Advocates: Website Redesign",
+ "launch": {
+  "view": "focused",
+  "file": "Main.dc.html"
+ },
+ "pages": [],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 5364,
+   "title": "Home",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "About.dc.html": {
+   "x": 0,
+   "y": 14399,
+   "w": 1440,
+   "h": 5009,
+   "title": "About Us: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Areas.dc.html": {
+   "x": 3120,
+   "y": 0,
+   "w": 1440,
+   "h": 6593,
+   "title": "Areas of Practice: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Insights.dc.html": {
+   "x": 0,
+   "y": 5524,
+   "w": 1440,
+   "h": 1826,
+   "title": "Insights: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Book.dc.html": {
+   "x": 1560,
+   "y": 3940,
+   "w": 1440,
+   "h": 1900,
+   "title": "Book Appointment",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Contact.dc.html": {
+   "x": 0,
+   "y": 21017,
+   "w": 1440,
+   "h": 2900,
+   "title": "Contact Us: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Header.dc.html": {
+   "x": 0,
+   "y": 7510,
+   "w": 1440,
+   "h": 124,
+   "title": "Header (shared)"
+  },
+  "Footer.dc.html": {
+   "x": 1560,
+   "y": 6310,
+   "w": 1440,
+   "h": 600,
+   "title": "Footer (shared)"
+  },
+  "HeroDesktop.dc.html": {
+   "x": 0,
+   "y": 8034,
+   "w": 1440,
+   "h": 5364,
+   "title": "Home: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "HeroTablet.dc.html": {
+   "x": 1560,
+   "y": 8034,
+   "w": 768,
+   "h": 5701,
+   "title": "Home: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "HeroPhone.dc.html": {
+   "x": 2448,
+   "y": 8034,
+   "w": 390,
+   "h": 5865,
+   "title": "Home: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AboutTablet.dc.html": {
+   "x": 1560,
+   "y": 14399,
+   "w": 768,
+   "h": 6118,
+   "title": "About Us: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AboutPhone.dc.html": {
+   "x": 2448,
+   "y": 14399,
+   "w": 390,
+   "h": 3999,
+   "title": "About Us: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AreasTablet.dc.html": {
+   "x": 4640,
+   "y": 0,
+   "w": 768,
+   "h": 9139,
+   "title": "Areas of Practice: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "AreasPhone.dc.html": {
+   "x": 5488,
+   "y": 0,
+   "w": 390,
+   "h": 7199,
+   "title": "Areas of Practice: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "InsightsTablet.dc.html": {
+   "x": 5958,
+   "y": 3940,
+   "w": 768,
+   "h": 2389,
+   "title": "Insights: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "InsightsPhone.dc.html": {
+   "x": 6806,
+   "y": 3940,
+   "w": 390,
+   "h": 2145,
+   "title": "Insights: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "Article.dc.html": {
+   "x": 7276,
+   "y": 3940,
+   "w": 1440,
+   "h": 3752,
+   "title": "Article 1: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ArticleTablet.dc.html": {
+   "x": 8796,
+   "y": 3940,
+   "w": 768,
+   "h": 3976,
+   "title": "Article 1: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ArticlePhone.dc.html": {
+   "x": 9644,
+   "y": 3940,
+   "w": 390,
+   "h": 4403,
+   "title": "Article 1: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ArticleMarriage.dc.html": {
+   "x": 7276,
+   "y": 8900,
+   "w": 1440,
+   "h": 3752,
+   "title": "Article 2: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ArticleMarriageTablet.dc.html": {
+   "x": 8796,
+   "y": 8900,
+   "w": 768,
+   "h": 3976,
+   "title": "Article 2: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ArticleMarriagePhone.dc.html": {
+   "x": 9644,
+   "y": 8900,
+   "w": 390,
+   "h": 4403,
+   "title": "Article 2: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ContactTablet.dc.html": {
+   "x": 1520,
+   "y": 21017,
+   "w": 768,
+   "h": 3415,
+   "title": "Contact Us: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ContactPhone.dc.html": {
+   "x": 2368,
+   "y": 21017,
+   "w": 390,
+   "h": 3184,
+   "title": "Contact Us: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "ContactFormStates.dc.html": {
+   "x": 2918,
+   "y": 21017,
+   "w": 1080,
+   "h": 880,
+   "title": "Contact: Form states (error \u00b7 success)"
+  },
+  "FAQ.dc.html": {
+   "x": 0,
+   "y": 24932,
+   "w": 1440,
+   "h": 1814,
+   "title": "Frequently Asked Questions: Desktop 1440",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "FAQTablet.dc.html": {
+   "x": 1560,
+   "y": 24932,
+   "w": 768,
+   "h": 2064,
+   "title": "Frequently Asked Questions: Tablet 768",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "FAQPhone.dc.html": {
+   "x": 2448,
+   "y": 24932,
+   "w": 390,
+   "h": 2231,
+   "title": "Frequently Asked Questions: Phone 390",
+   "expand": "fill",
+   "is_interactive": true
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "About.dc.html",
+  "AboutTablet.dc.html",
+  "AboutPhone.dc.html",
+  "Areas.dc.html",
+  "AreasPhone.dc.html",
+  "AreasTablet.dc.html",
+  "Insights.dc.html",
+  "InsightsPhone.dc.html",
+  "InsightsTablet.dc.html",
+  "Book.dc.html",
+  "Contact.dc.html",
+  "Header.dc.html",
+  "Footer.dc.html",
+  "HeroDesktop.dc.html",
+  "HeroTablet.dc.html",
+  "HeroPhone.dc.html",
+  "Article.dc.html",
+  "ArticleTablet.dc.html",
+  "ArticlePhone.dc.html",
+  "ArticleMarriage.dc.html",
+  "ArticleMarriageTablet.dc.html",
+  "ArticleMarriagePhone.dc.html",
+  "ContactTablet.dc.html",
+  "ContactPhone.dc.html",
+  "ContactFormStates.dc.html",
+  "FAQ.dc.html",
+  "FAQTablet.dc.html",
+  "FAQPhone.dc.html"
+ ],
+ "notes": {
+  "t1": {
+   "x": 0,
+   "y": -300,
+   "text": "ASW Law Advocates LLP: Website",
+   "kind": "title1",
+   "maxW": 4560
+  },
+  "t2": {
+   "x": 0,
+   "y": 7804,
+   "text": "Home redesign: ASW brand (Desktop \u00b7 Tablet \u00b7 Phone)",
+   "kind": "title1",
+   "maxW": 2838
+  },
+  "t3": {
+   "x": 0,
+   "y": 14159,
+   "text": "About Us page: Desktop \u00b7 Tablet \u00b7 Phone",
+   "kind": "title1",
+   "maxW": 2838
+  },
+  "t4": {
+   "x": -380,
+   "y": 16699,
+   "w": 320,
+   "text": "Replace portraits with real headshots when supplied.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "t5": {
+   "x": 0,
+   "y": 20767,
+   "text": "Contact Us page: Desktop \u00b7 Tablet \u00b7 Phone",
+   "kind": "title1",
+   "maxW": 3998
+  },
+  "t6": {
+   "x": -380,
+   "y": 22717,
+   "w": 320,
+   "text": "Replace with live Google Map embed.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "t8": {
+   "x": 0,
+   "y": 24682,
+   "text": "Frequently Asked Questions page: Desktop \u00b7 Tablet \u00b7 Phone",
+   "kind": "title1",
+   "maxW": 2838
+  },
+  "t9": {
+   "x": -380,
+   "y": 11309,
+   "w": 320,
+   "text": "Replace portraits with real headshots when supplied; the same current portrait is used for all three.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "t10": {
+   "x": -380,
+   "y": 15499,
+   "w": 320,
+   "text": "Placeholders to be replaced with content from the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Main.dc.html": {
+   "x": 0,
+   "y": -110,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_About.dc.html": {
+   "x": 0,
+   "y": 14289,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Areas.dc.html": {
+   "x": 3120,
+   "y": -110,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Insights.dc.html": {
+   "x": 0,
+   "y": 5414,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Book.dc.html": {
+   "x": 1560,
+   "y": 3830,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Contact.dc.html": {
+   "x": 0,
+   "y": 20907,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Header.dc.html": {
+   "x": 0,
+   "y": 7400,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Footer.dc.html": {
+   "x": 1560,
+   "y": 6200,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_HeroDesktop.dc.html": {
+   "x": 0,
+   "y": 7924,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_HeroTablet.dc.html": {
+   "x": 1560,
+   "y": 7924,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_HeroPhone.dc.html": {
+   "x": 2448,
+   "y": 7924,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_AboutTablet.dc.html": {
+   "x": 1560,
+   "y": 14289,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_AboutPhone.dc.html": {
+   "x": 2448,
+   "y": 14289,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_AreasTablet.dc.html": {
+   "x": 4640,
+   "y": -110,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_AreasPhone.dc.html": {
+   "x": 5488,
+   "y": -110,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_InsightsTablet.dc.html": {
+   "x": 5958,
+   "y": 3830,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_InsightsPhone.dc.html": {
+   "x": 6806,
+   "y": 3830,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_Article.dc.html": {
+   "x": 7276,
+   "y": 3830,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ArticleTablet.dc.html": {
+   "x": 8796,
+   "y": 3830,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ArticlePhone.dc.html": {
+   "x": 9644,
+   "y": 3830,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ArticleMarriage.dc.html": {
+   "x": 7276,
+   "y": 8790,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ArticleMarriageTablet.dc.html": {
+   "x": 8796,
+   "y": 8790,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ArticleMarriagePhone.dc.html": {
+   "x": 9644,
+   "y": 8790,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ContactTablet.dc.html": {
+   "x": 1520,
+   "y": 20907,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ContactPhone.dc.html": {
+   "x": 2368,
+   "y": 20907,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_ContactFormStates.dc.html": {
+   "x": 2918,
+   "y": 20907,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_FAQ.dc.html": {
+   "x": 0,
+   "y": 24822,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_FAQTablet.dc.html": {
+   "x": 1560,
+   "y": 24822,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  },
+  "s_FAQPhone.dc.html": {
+   "x": 2448,
+   "y": 24822,
+   "w": 340,
+   "text": "Sample copy for review, to be confirmed by the firm.",
+   "fill": "orange",
+   "size": "s"
+  }
+ },
+ "designSystems": [
+  {
+   "title": "CaseDesk",
+   "namespace": "casedesk",
+   "artifact": "https://claude.ai/code/artifact/602caafd-981e-4503-be42-30864d1db584",
+   "version": "1790157203-331a",
+   "copiedAt": "2026-11-25T10:25:00Z"
+  }
+ ]
+}

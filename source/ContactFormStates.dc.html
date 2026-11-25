@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact: Form states</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+
+body{margin:0}
+.st-root{box-sizing:border-box;width:1080px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;align-items:stretch;padding:48px;background:#F2F2F0;font-family:'DM Sans',sans-serif}
+.st-col{display:flex;flex-direction:column;gap:14px}
+.st-col .ct-card{flex:1}
+.st-cap{margin:0;font-size:15px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0B66A0}
+
+.ct-card{background:#ffffff;border:1px solid #E6ECF4;border-radius:20px;box-shadow:0 14px 40px rgba(14,31,61,.08);padding:40px}
+.ct-form{display:flex;flex-direction:column;gap:22px}
+.ct-f{display:flex;flex-direction:column;gap:8px}
+.ct-f label{font-size:16px;line-height:22px;font-weight:600;color:#0E1F3D}
+.ct-in{width:100%;box-sizing:border-box;min-height:52px;padding:0 18px;border:1.5px solid #8798B2;border-radius:12px;background:#ffffff;color:#0E1F3D;font-family:'DM Sans',sans-serif;font-size:17px;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+textarea.ct-in{min-height:180px;padding:14px 18px;line-height:1.55;resize:vertical}
+.ct-in:focus{border-color:#0F74B5;box-shadow:0 0 0 3px #ffffff,0 0 0 6px #0F74B5}
+.ct-in:user-invalid,.ct-f.is-err .ct-in{border-color:#B93815;box-shadow:0 0 0 1px #B93815}
+.ct-err{display:none;margin:0;font-size:15px;line-height:20px;font-weight:500;color:#B93815}
+.ct-in:user-invalid ~ .ct-err,.ct-f.is-err .ct-err{display:block}
+.ct-submit{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 44px;border:0;border-radius:999px;background:#1B4584;color:#ffffff;font-family:'DM Sans',sans-serif;font-size:17px;font-weight:600;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.ct-submit:hover{background:#0E1F3D;transform:translateY(-2px)}
+.ct-submit:focus-visible{outline:3px solid #0F74B5;outline-offset:3px}
+.ct-ok{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;min-height:420px}
+.ct-ok-ic{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;border:1.5px solid #C9DBF0;color:#1B4584}
+.ct-ph{margin:0;font-size:18px;line-height:1.6;color:#2A3A55}
+
+/* ===== type system ===== */
+.h-root{font-synthesis:none}
+.h-root :is(h1,h2,h3,h4,.h-h1,.pg-h1){font-family:'Marcellus',Georgia,serif !important;font-weight:400 !important;font-synthesis:none !important}
+:where(.h-root) :is(h1,h2,h3){text-wrap:balance}
+.h-root :is(h1,.h-h1,.pg-h1){font-size:56px !important;line-height:1.15 !important}
+.h-root h2:not(.h-ah):not(.ft-ah):not(.in-title){font-size:44px !important;line-height:1.15 !important}
+.h-root :is(h3,.h-ah,.ft-ah,.in-title){font-size:28px !important;line-height:1.2 !important}
+/* body */
+.h-root :is(.ap3-p,.ab-p,.wh-p,.ar-p,p.at-p,.at-lead,.in-ex,.bl-ex){font-family:'DM Sans',system-ui,sans-serif !important;font-size:18px !important;line-height:1.65 !important;color:#2A3A55 !important;max-width:65ch}
+/* small text, eyebrows, labels */
+.h-top{font-size:14px !important}
+.h-root :is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow,.tb2-l,.tm-mem-h,.te-mem-h,.h-trust-l){font-family:'DM Sans',system-ui,sans-serif !important;font-size:13px !important;line-height:16px !important;font-weight:600 !important;text-transform:uppercase;letter-spacing:.14em !important}
+.h-root :is(.ft-lab,.ct-lab,.vs-lab,.vu-lab){font-size:14px !important;letter-spacing:.14em !important}
+.h-root span.at-p{font-size:14px !important;line-height:18px !important}
+/* placeholders */
+.h-root :is(.fq-a,.fp-q,.ta-r,.hw3-ph,.ct-ph){font-style:normal !important;text-decoration:none !important}
+/* numerals */
+.h-root :is(.ap3-n,span.at-p,.hw3-c,.hw-c,.pl-num,.pl-z,.ar-num,.ab-num,.ab-z,.fs-n:not(.fs-w)){font-family:'DM Sans',system-ui,sans-serif !important;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1}
+.h-root .fs-w{font-family:'Marcellus',Georgia,serif}
+/* buttons and links */
+.h-root :is(.h-btn,.h-link,.h-pillbtn,.h-all,.h-links a,.h-row,.h-chip,.pv-link,.ft-book,.ar-btn,.cl-book,.at-submit,.ct-submit,.fq-pill,.ar-all,.bl-all,.bl-more,.in-more,.te-all,.ws-lk,.ab-link,.ct-act,.vs-maps,.mp-btn,.ap-pill,.h-menu a.l,.h-menu .h-pillbtn){font-family:'DM Sans',system-ui,sans-serif !important;font-size:16px !important;font-weight:600 !important}
+@media (max-width:1023px){
+  .h-root :is(h1,.h-h1,.pg-h1){font-size:44px !important}
+  .h-root h2:not(.h-ah):not(.ft-ah):not(.in-title){font-size:36px !important}
+  .h-root :is(h3,.h-ah,.ft-ah,.in-title){font-size:24px !important}
+  .h-root :is(.ap3-p,.ab-p,.wh-p,.ar-p,p.at-p,.at-lead,.in-ex,.bl-ex){font-size:17px !important}
+}
+@media (max-width:640px){
+  .h-root :is(h1,.h-h1,.pg-h1){font-size:34px !important}
+  .h-root h2:not(.h-ah):not(.ft-ah):not(.in-title){font-size:30px !important}
+  .h-root :is(h3,.h-ah,.ft-ah,.in-title){font-size:22px !important}
+  .h-root :is(.ap3-p,.ab-p,.wh-p,.ar-p,p.at-p,.at-lead,.in-ex,.bl-ex){font-size:16px !important}
+  .h-root :is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow,.tb2-l,.tm-mem-h,.te-mem-h,.h-trust-l){font-size:12px !important}
+}
+
+/* ===== clean accents: no dash ornaments ===== */
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow){gap:8px !important;align-items:center !important}
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow)::before{content:"" !important;display:block !important;flex:none !important;width:6px !important;height:6px !important;border-radius:50% !important;background:#94BBE4 !important;margin:0 !important}
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow) + :is(h1,h2){margin-top:10px !important}
+:is(.pv-bar,.sec-bar,.ws-bar,.ar-bar,.bl-bar,.pg-hair){display:none !important}
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow)::after{content:none !important}
+.h-root .pv-head + :not(.at-reg){margin-top:16px !important}
+@media (max-width:640px){.ap3-lead::after{display:none !important}}
+</style>
+</helmet>
+
+<div class="st-root">
+  <div class="st-col"><p class="st-cap">Form card: error state</p><div class="ct-card"><form class="ct-form" action="#" method="post"><div class="ct-f is-err"><label for="ct-name">Your name</label><input class="ct-in" id="ct-name" name="ct-name" type="text" required aria-required="true" autocomplete="name" aria-invalid="true" aria-describedby="ct-name-e"><p class="ct-err" id="ct-name-e">This field is required</p></div><div class="ct-f is-err"><label for="ct-email">Your email</label><input class="ct-in" id="ct-email" name="ct-email" type="email" required aria-required="true" autocomplete="email" aria-invalid="true" aria-describedby="ct-email-e"><p class="ct-err" id="ct-email-e">This field is required</p></div><div class="ct-f"><label for="ct-subj">Subject</label><input class="ct-in" id="ct-subj" name="ct-subj" type="text" required aria-required="true"><p class="ct-err" id="ct-subj-e">This field is required</p></div><div class="ct-f"><label for="ct-msg">Your message (optional)</label><textarea class="ct-in" id="ct-msg" name="ct-msg" rows="6"></textarea></div><button class="ct-submit" type="submit">Submit</button></form></div></div>
+  <div class="st-col"><p class="st-cap">Form card: success state</p><div class="ct-card"><div class="ct-ok" role="status"><span class="ct-ok-ic"><svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span><p class="ct-ph ct-okt">Thank you for contacting ASW Law Advocates LLP. We have received your message and will respond as soon as possible.</p></div></div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1080,"height":880}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

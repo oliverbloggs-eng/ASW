@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>@@TITLE@@</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.h-root{width:100%;overflow-x:clip;background:#ffffff;color:#0E1F3D;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.5}
+.h-root a{text-decoration:none;color:inherit}
+.h-root ul{list-style:none;margin:0;padding:0}
+.h-root a:focus-visible,.h-root button:focus-visible{outline:3px solid #0F74B5;outline-offset:3px;box-shadow:0 0 0 3px #ffffff}
+.h-wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+
+/* top bar */
+.h-top{background:#F2F2F0;font-size:13px;line-height:18px;font-weight:500;color:#0E1F3D}
+.h-top .h-wrap{display:flex;align-items:center;justify-content:space-between;gap:4px 24px;min-height:44px}
+.h-top-r{display:flex;align-items:center;gap:4px 28px}
+.h-ti{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.h-ti svg{color:#0B66A0;flex:none}
+.h-top a.h-ti:hover{color:#0B66A0}
+
+/* nav */
+.h-nav{position:sticky;top:0;z-index:50;background:#ffffff;box-shadow:0 1px 0 #E6ECF4,0 6px 20px rgba(14,31,61,.05)}
+.h-root section[id]{scroll-margin-top:96px}
+.h-nav .h-wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:88px;gap:24px}
+.h-logo{display:block;line-height:0;justify-self:start}
+.h-logo img{height:60px;width:auto;display:block}
+.h-links{display:flex;align-items:center;gap:6px 34px}
+.h-links a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:500;color:#0E1F3D;border-bottom:2px solid transparent}
+.h-links a:hover{color:#0B66A0}
+.h-links a.cur{font-weight:700;border-bottom-color:#94BBE4}
+.h-pillbtn{justify-self:end;display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border-radius:999px;background:#1B4584;color:#ffffff !important;font-size:15px;font-weight:600;transition:background .2s ease}
+.h-pillbtn:hover{background:#0E1F3D}
+.h-burger{display:none;justify-self:end;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;border:1px solid #C9DBF0;background:#ffffff;color:#0E1F3D;cursor:pointer;padding:0}
+.h-menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:8px 32px 24px;background:#ffffff;border-bottom:1px solid #E3E6EC;box-shadow:0 22px 40px rgba(14,31,61,.12)}
+.h-menu a.l{display:flex;align-items:center;min-height:56px;font-size:17px;font-weight:500;border-bottom:1px solid #EDEFF3}
+.h-menu a.cur{font-weight:700;color:#1B4584}
+.h-menu .h-pillbtn{margin-top:20px;justify-content:center;width:100%;min-height:56px;font-size:16px}
+
+/* hero */
+.h-hero{position:relative;overflow:hidden;contain:paint;isolation:isolate;background:radial-gradient(ellipse 52% 72% at 74% 66%,rgba(148,187,228,.5) 0%,rgba(148,187,228,0) 70%),linear-gradient(135deg,#ffffff 0%,#F2F2F0 52%,#E4ECF8 100%)}
+.h-inner{max-width:1280px;margin:0 auto;padding:56px 40px 0;display:grid;grid-template-columns:480px minmax(0,1fr) 280px;column-gap:20px;min-height:720px;position:relative}
+.h-copy{position:relative;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;max-width:480px;padding-bottom:40px}
+.h-eyebrow{display:flex;align-items:center;gap:14px;font-size:13px;line-height:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0B66A0}
+.h-eyebrow::before{content:"";width:36px;height:2px;background:#0F74B5}
+.h-h1{margin:22px 0 0;max-width:480px;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:50px;line-height:1.08;letter-spacing:-.01em;color:#0E1F3D;text-wrap:balance}
+.h-h1 span{color:#0F74B5}
+.h-h1 .h-nb{color:inherit;white-space:nowrap}
+.h-trust{width:100%;max-width:460px;margin-top:38px;padding-top:22px;border-top:1px solid rgba(14,31,61,.16)}
+.h-trust-l{font-size:12.5px;line-height:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0B66A0}
+.h-root .h-trust-ul{display:flex;flex-wrap:wrap;gap:10px 30px;margin:14px 0 0;padding:0;list-style:none}
+.h-trust-ul li{display:inline-flex;align-items:center;gap:9px;font-size:15px;line-height:22px;font-weight:500;color:#0E1F3D}
+.h-trust-ul svg{flex:none;color:#1B4584}
+.h-p{margin:0;max-width:420px;font-size:18px;line-height:1.65;color:#33445F}
+.h-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:36px}
+.h-btn{display:inline-flex;align-items:center;gap:18px;min-height:60px;padding:8px 8px 8px 30px;border-radius:999px;background:#1B4584;color:#ffffff !important;font-size:16px;font-weight:600;transition:background .2s ease}
+.h-btn:hover{background:#0E1F3D}
+.h-btn .ic{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#ffffff;color:#1B4584}
+.h-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:16px;font-weight:600;color:#0B66A0 !important;border-bottom:2px solid transparent}
+.h-link:hover{border-bottom-color:#0B66A0}
+.h-pic{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#ffffff;border:1px solid #C9DBF0;color:#1B4584}
+.h-pl{font-size:15px;font-weight:600;color:#0E1F3D}
+
+.h-art{position:relative;z-index:1}
+.h-arch2{position:absolute;left:50%;bottom:0;width:430px;height:690px;margin-left:-215px;border:1.5px solid rgba(27,69,132,.26);border-bottom:0;border-radius:215px 215px 0 0}
+.h-arch{position:absolute;left:50%;bottom:0;width:384px;height:650px;margin-left:-192px;border-radius:192px 192px 0 0;background:linear-gradient(180deg,#94BBE4 0%,#BBD3EE 62%,#DCE8F6 100%)}
+.h-statue{position:absolute;left:50%;bottom:-52px;height:750px;width:auto;transform:translateX(-50%);filter:drop-shadow(0 28px 34px rgba(14,31,61,.30));max-width:none}
+
+.h-areas-d{position:relative;z-index:3;align-self:center;padding-bottom:40px}
+.h-ah{margin:0 0 14px;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:24px;line-height:30px;color:#0E1F3D}
+.h-areas-d ul{display:flex;flex-direction:column;gap:0}
+.h-areas-d li{border-bottom:1px solid rgba(14,31,61,.10);padding:2px 0}
+.h-areas-d li:last-child{border-bottom:0}
+.h-row{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 8px 8px 8px;border-radius:999px;font-size:15px;font-weight:500;color:#0E1F3D;transition:background .2s ease,box-shadow .2s ease}
+.h-row:hover{background:rgba(255,255,255,.62)}
+.h-row.on{background:#ffffff;box-shadow:0 12px 30px rgba(14,31,61,.10)}
+.h-ric{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#ffffff;border:1px solid #C9DBF0;color:#1B4584;transition:background .2s ease,color .2s ease}
+.h-row:hover .h-ric{border-color:#1B4584;color:#1B4584}
+.h-row.on .h-ric{background:#1B4584;border-color:#1B4584;color:#ffffff}
+
+/* panel (tablet + phone) */
+.h-panel{display:none;position:relative;z-index:5;background:#ffffff;border-radius:28px 28px 0 0;margin-top:-40px;box-shadow:0 -14px 40px rgba(14,31,61,.08)}
+.h-panel .h-wrap{padding-top:36px;padding-bottom:48px}
+.h-root .h-chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.h-chip{display:flex;align-items:center;gap:10px;min-height:56px;padding:8px 14px 8px 8px;border-radius:999px;background:#F2F2F0;font-size:15px;font-weight:500;line-height:1.25;color:#0E1F3D;transition:background .2s ease}
+.h-chip:hover{background:#E4ECF8}
+.h-chip .h-ric{width:40px;height:40px}
+
+
+.h-all{display:none}
+/* tablet */
+@media (max-width:1023px){
+  .h-wrap{padding:0 32px}
+  .h-inner{grid-template-columns:minmax(0,1fr) 300px;padding:44px 32px 0;min-height:0}
+  .h-areas-d{display:none}
+  .h-panel{display:block}
+  .h-copy{padding-bottom:84px}
+  .h-h1{font-size:41px;margin:20px 0 0;max-width:none}
+  .h-art{min-height:560px}
+  .h-arch{width:280px;height:470px;margin-left:-140px;border-radius:140px 140px 0 0}
+  .h-arch2{width:312px;height:510px;margin-left:-156px;border-radius:156px 156px 0 0}
+  .h-statue{height:590px;bottom:-14px}
+}
+/* nav collapses */
+@media (max-width:860px){
+  .h-nav .h-wrap{display:flex;justify-content:space-between;min-height:80px}
+  .h-links,.h-nav .h-wrap > .h-pillbtn{display:none}
+  .h-burger{display:inline-flex}
+  .h-menu{display:flex}
+  .h-logo img{height:54px}
+}
+/* phone */
+@media (max-width:640px){
+  .h-wrap{padding:0 20px}
+  .h-top .h-wrap{justify-content:center}
+  .h-hours,.h-email{display:none}
+  .h-ti{min-height:44px;font-size:16px}
+  .h-eyebrow{font-size:14px}
+  .h-nav .h-wrap{min-height:72px}
+  .h-logo img{height:50px}
+  .h-menu{padding:8px 20px 24px}
+  .h-inner{grid-template-columns:minmax(0,1fr);padding:34px 20px 0}
+  .h-copy{padding-bottom:0}
+  .h-h1{font-size:34px;line-height:1.12;margin:18px 0 0}
+  .h-actions{flex-direction:column;align-items:stretch;gap:6px;width:100%;margin-top:26px}
+  .h-btn{justify-content:space-between;width:100%}
+  .h-link{justify-content:center}
+  .h-art{min-height:470px;margin-top:22px}
+  .h-arch{width:270px;height:400px;margin-left:-135px;border-radius:135px 135px 0 0}
+  .h-arch2{width:310px;height:430px;margin-left:-155px;border-radius:155px 155px 0 0}
+  .h-statue{height:484px;bottom:-22px}
+  .h-panel .h-wrap{padding-top:30px;padding-bottom:40px}
+  .h-root .h-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .h-chip{font-size:16px}
+}
+@@ABOUT_CSS@@@@AREAS_CSS@@</style>
+</helmet>
+
+<div class="h-root">
+
+  <!-- Contact bar -->
+  <div class="h-top">
+    <div class="h-wrap">
+      <span class="h-ti h-hours">@@I_CLOCK@@<span>Mon to Fri: 9.00am to 5.00pm</span></span>
+      <div class="h-top-r">
+        <a class="h-ti h-email" href="mailto:info@aswlaw.africa">@@I_MAIL@@<span>info@aswlaw.africa</span></a>
+        <a class="h-ti" href="tel:+254788685911">@@I_PHONE@@<span>+254 788685911</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="h-nav">
+    <div class="h-wrap">
+      <a class="h-logo" href="Main.dc.html" aria-label="ASW Law Advocates LLP, home"><img src="@@LOGO@@" alt="ASW Law Advocates LLP"></a>
+      <nav class="h-links" aria-label="Primary">
+        <a class="cur" href="Main.dc.html" aria-current="page">Home</a>
+        <a href="About.dc.html">About Us</a>
+        <a href="Areas.dc.html">Areas Of Practice</a>
+        <a href="Insights.dc.html">Insights</a>
+        <a href="Contact.dc.html">Contact Us</a>
+      </nav>
+      <a class="h-pillbtn" href="Book.dc.html">Book Appointment</a>
+      <button class="h-burger" type="button" aria-label="{{burgerLabel}}" aria-expanded="{{open}}" onClick="{{toggle}}">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{burgerPath}}"/></svg>
+      </button>
+    </div>
+    <sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+      <nav class="h-menu" aria-label="Mobile">
+        <a class="l cur" href="Main.dc.html" aria-current="page">Home</a>
+        <a class="l" href="About.dc.html">About Us</a>
+        <a class="l" href="Areas.dc.html">Areas Of Practice</a>
+        <a class="l" href="Insights.dc.html">Insights</a>
+        <a class="l" href="Contact.dc.html">Contact Us</a>
+        <a class="h-pillbtn" href="Book.dc.html">Book Appointment</a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-hero" aria-labelledby="hero-title">
+    <div class="h-inner">
+      <div class="h-copy">
+        <div class="h-eyebrow">ASW LAW ADVOCATES LLP</div>
+        <h1 class="h-h1" id="hero-title">We offer <span class="h-nb">world-class</span> <span>legal representation</span></h1>
+        <div class="h-actions">
+          <a class="h-btn" href="Book.dc.html"><span>Book Appointment</span><span class="ic">@@I_ARROW18@@</span></a>
+          <a class="h-link" href="About.dc.html"><span>Learn More</span>@@I_ARROW16@@</a>
+        </div>
+      </div>
+
+      <div class="h-art" aria-hidden="false">
+        <div class="h-arch2"></div>
+        <div class="h-arch"></div>
+        <img class="h-statue" src="@@STATUE@@" alt="Bronze statue of blindfolded Lady Justice holding scales and a sword">
+      </div>
+
+      <nav class="h-areas-d" aria-label="Areas of practice">
+        <h2 class="h-ah">Areas of Practice</h2>
+        <ul>
+@@ROWS@@        </ul>
+      </nav>
+    </div>
+
+    <div class="h-panel">
+      <div class="h-wrap">
+        <h2 class="h-ah" style="margin:0">Areas of Practice</h2>
+        <ul class="h-chips">
+@@CHIPS@@        </ul>
+        <a class="h-all" href="Areas.dc.html"><span>View all areas of practice</span>@@I_ARROW16@@</a>
+      </div>
+    </div>
+  </section>
+
+@@TRUST@@
+@@ABOUT@@
+@@WHO@@
+@@AREAS@@
+@@HOW@@
+@@TEAM@@
+@@FAQ@@
+@@BLOG@@
+@@FOOT@@
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":@@W@@,"height":@@H@@}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: false, ai: 0, ti: 0 };
+  }
+  goArea(i) {
+    const t = document.getElementById('ar-track');
+    if (!t || i < 0 || i > 5 || !t.children[i]) return;
+    t.scrollTo({ left: t.children[i].offsetLeft - t.children[0].offsetLeft, behavior: 'smooth' });
+  }
+  goTeam(i) {
+    const t = document.getElementById('tm-track');
+    if (!t || i < 0 || i > 2 || !t.children[i]) return;
+    t.scrollTo({ left: t.children[i].offsetLeft - t.children[0].offsetLeft, behavior: 'smooth' });
+  }
+  renderVals() {
+    const open = this.state.open;
+    const ai = this.state.ai;
+    const ti = this.state.ti;
+    return {
+      open,
+      toggle: () => this.setState({ open: !this.state.open }),
+      burgerPath: open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16',
+      burgerLabel: open ? 'Close menu' : 'Open menu',
+      ai,
+      tc0: ti === 0 ? 'ta-l on' : 'ta-l',
+      tc1: ti === 1 ? 'ta-l on' : 'ta-l',
+      tc2: ti === 2 ? 'ta-l on' : 'ta-l',
+      tcur: String(ti + 1).padStart(2, '0'),
+      tFill: 'at-fill t' + ti,
+      tPrevCls: ti === 0 ? 'at-btn dis' : 'at-btn',
+      tNextCls: ti === 2 ? 'at-btn dis' : 'at-btn',
+      tPrevAria: ti === 0 ? 'true' : 'false',
+      tNextAria: ti === 2 ? 'true' : 'false',
+      tPrev: () => this.goTeam(this.state.ti - 1),
+      tNext: () => this.goTeam(this.state.ti + 1),
+      onTeam: (e) => {
+        const t = e.currentTarget || e.target;
+        if (!t || !t.children || t.children.length < 2) return;
+        const step = t.children[1].offsetLeft - t.children[0].offsetLeft;
+        const i = Math.max(0, Math.min(2, Math.round(t.scrollLeft / step)));
+        if (i !== this.state.ti) this.setState({ ti: i });
+      },
+      cur: String(ai + 1).padStart(2, '0'),
+      fillCls: 'at-fill s' + ai,
+      prevCls: ai === 0 ? 'at-btn dis' : 'at-btn',
+      nextCls: ai === 5 ? 'at-btn dis' : 'at-btn',
+      prevAria: ai === 0 ? 'true' : 'false',
+      nextAria: ai === 5 ? 'true' : 'false',
+      goPrev: () => this.goArea(this.state.ai - 1),
+      goNext: () => this.goArea(this.state.ai + 1),
+      onTrack: (e) => {
+        const t = e.currentTarget || e.target;
+        if (!t || !t.children || t.children.length < 2) return;
+        const step = t.children[1].offsetLeft - t.children[0].offsetLeft;
+        const i = Math.max(0, Math.min(5, Math.round(t.scrollLeft / step)));
+        if (i !== this.state.ai) this.setState({ ai: i });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+/* ===== about type system ===== */
+.fs-n{font-family:'DM Sans',system-ui,sans-serif !important;font-weight:300 !important;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;color:#ffffff}
+.h-root .fs-n,.h-root .fs-n.fs-w,.h-root .fs-n:not(.fs-w){font-family:'DM Sans',system-ui,sans-serif !important;font-weight:300 !important}
+.h-root :is(h1.pg-h1){font-family:'Marcellus',Georgia,serif !important;font-weight:400 !important;font-synthesis:none !important;font-size:56px !important;line-height:1.15 !important}
+.h-root h2.sec-h2.sec-h2.sec-h2.sec-h2{font-family:'Marcellus',Georgia,serif !important;font-weight:400 !important;font-synthesis:none !important;font-size:44px !important;line-height:1.2 !important;text-wrap:balance}
+.h-root :is(h3.tm-name,h3.mt-n,.wh-card h3,.pl-tx h3,h3.hw3-t,.ac-t){font-family:'Marcellus',Georgia,serif !important;font-weight:400 !important;font-synthesis:none !important;font-size:28px !important;line-height:1.2 !important}
+.h-root :is(.wh-p,.pl-lead,.pg-tag,.bd,.tm-role,.tm-bio,.hw3-ph,.mt-r){font-style:normal !important;text-decoration:none !important;background:none !important;padding-left:0 !important;padding-right:0 !important;font-family:'DM Sans',system-ui,sans-serif !important;font-size:18px !important;line-height:1.65 !important;font-weight:400 !important;max-width:65ch}
+.h-root :is(.wh-p,.pl-lead,.bd,.tm-role,.tm-bio,.hw3-ph,.mt-r){color:#2A3A55 !important}
+.h-root .pg-tag{color:#C9DBF0 !important}
+.h-root .mt-mem li,.h-root .tm-mem li{font-family:'DM Sans',system-ui,sans-serif !important;font-size:18px !important;line-height:1.5 !important;color:#2A3A55 !important}
+.h-root :is(.sec-eyebrow,.tm-mem-h,.mt-mh){font-family:'DM Sans',system-ui,sans-serif !important;font-size:13px !important;line-height:16px !important;font-weight:600 !important;letter-spacing:.14em !important;text-transform:uppercase;color:#0F74B5 !important}
+.h-root :is(.pg-crumb a,.pg-crumb li,.pg-crumb span){font-family:'DM Sans',system-ui,sans-serif !important;font-size:16px !important;font-weight:600 !important}
+.h-root :is(.pl-num,.pl-z,.hw3-c,.hs-c,.ac-num,.at-num,.at-cur,.at-tot,.fs-l){font-family:'DM Sans',system-ui,sans-serif !important;font-variant-numeric:lining-nums}
+.h-root .fs-l{font-size:14px !important;font-weight:600 !important}
+@media (max-width:1023px){
+  .h-root :is(h1.pg-h1){font-size:44px !important}
+  .h-root h2.sec-h2.sec-h2.sec-h2.sec-h2{font-size:36px !important}
+  .h-root :is(h3.tm-name,h3.mt-n,.wh-card h3,.pl-tx h3,h3.hw3-t,.ac-t){font-size:24px !important}
+  .h-root :is(.wh-p,.pl-lead,.pg-tag,.bd,.tm-role,.tm-bio,.hw3-ph,.mt-r){font-style:normal !important;text-decoration:none !important;background:none !important;padding-left:0 !important;padding-right:0 !important;font-size:17px !important}
+  .h-root .mt-mem li,.h-root .tm-mem li{font-size:17px !important}
+}
+@media (max-width:640px){
+  .h-root :is(h1.pg-h1){font-size:34px !important}
+  .h-root h2.sec-h2.sec-h2.sec-h2.sec-h2{font-size:30px !important}
+  .h-root :is(h3.tm-name,h3.mt-n,.wh-card h3,.pl-tx h3,h3.hw3-t,.ac-t){font-size:22px !important}
+  .h-root :is(.wh-p,.pl-lead,.pg-tag,.bd,.tm-role,.tm-bio,.hw3-ph,.mt-r){font-style:normal !important;text-decoration:none !important;background:none !important;padding-left:0 !important;padding-right:0 !important;font-size:16px !important}
+  .h-root .mt-mem li,.h-root .tm-mem li{font-size:16px !important}
+  .h-root :is(.sec-eyebrow,.tm-mem-h,.mt-mh){font-size:12px !important}
+  .h-root .fs-n,.h-root .fs-n:not(.fs-w){font-size:34px !important;line-height:1 !important}
+  .h-root .fs-n.fs-w{font-size:28px !important}
+  .h-root .fs-l{font-size:12px !important;line-height:16px !important;letter-spacing:.12em !important;color:#94BBE4 !important;text-transform:uppercase}
+}

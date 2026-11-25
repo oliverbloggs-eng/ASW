@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hero + About: Desktop 1440</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.h-root{width:100%;overflow-x:clip;background:#ffffff;color:#0E1F3D;font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.5}
+.h-root a{text-decoration:none;color:inherit}
+.h-root ul{list-style:none;margin:0;padding:0}
+.h-root a:focus-visible,.h-root button:focus-visible{outline:3px solid #0F74B5;outline-offset:3px;box-shadow:0 0 0 3px #ffffff}
+.h-wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+
+/* top bar */
+.h-top{background:#F2F2F0;font-size:13px;line-height:18px;font-weight:500;color:#0E1F3D}
+.h-top .h-wrap{display:flex;align-items:center;justify-content:space-between;gap:4px 24px;min-height:44px}
+.h-top-r{display:flex;align-items:center;gap:4px 28px}
+.h-ti{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.h-ti svg{color:#0B66A0;flex:none}
+.h-top a.h-ti:hover{color:#0B66A0}
+
+/* nav */
+.h-nav{position:sticky;top:0;z-index:50;background:#ffffff;box-shadow:0 1px 0 #E6ECF4,0 6px 20px rgba(14,31,61,.05)}
+.h-root section[id]{scroll-margin-top:96px}
+.h-nav .h-wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:88px;gap:24px}
+.h-logo{display:block;line-height:0;justify-self:start}
+.h-logo img{height:60px;width:auto;display:block}
+.h-links{display:flex;align-items:center;gap:6px 34px}
+.h-links a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:500;color:#0E1F3D;border-bottom:2px solid transparent}
+.h-links a:hover{color:#0B66A0}
+.h-links a.cur{font-weight:700;border-bottom-color:#94BBE4}
+.h-pillbtn{justify-self:end;display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border-radius:999px;background:#1B4584;color:#ffffff !important;font-size:15px;font-weight:600;transition:background .2s ease}
+.h-pillbtn:hover{background:#0E1F3D}
+.h-burger{display:none;justify-self:end;align-items:center;justify-content:center;width:48px;height:48px;border-radius:999px;border:1px solid #C9DBF0;background:#ffffff;color:#0E1F3D;cursor:pointer;padding:0}
+.h-menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:8px 32px 24px;background:#ffffff;border-bottom:1px solid #E3E6EC;box-shadow:0 22px 40px rgba(14,31,61,.12)}
+.h-menu a.l{display:flex;align-items:center;min-height:56px;font-size:17px;font-weight:500;border-bottom:1px solid #EDEFF3}
+.h-menu a.cur{font-weight:700;color:#1B4584}
+.h-menu .h-pillbtn{margin-top:20px;justify-content:center;width:100%;min-height:56px;font-size:16px}
+
+/* hero */
+.h-hero{position:relative;overflow:hidden;contain:paint;isolation:isolate;background:radial-gradient(ellipse 52% 72% at 74% 66%,rgba(148,187,228,.5) 0%,rgba(148,187,228,0) 70%),linear-gradient(135deg,#ffffff 0%,#F2F2F0 52%,#E4ECF8 100%)}
+.h-inner{max-width:1280px;margin:0 auto;padding:56px 40px 0;display:grid;grid-template-columns:480px minmax(0,1fr) 280px;column-gap:20px;min-height:720px;position:relative}
+.h-copy{position:relative;z-index:3;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;max-width:480px;padding-bottom:40px}
+.h-eyebrow{display:flex;align-items:center;gap:14px;font-size:13px;line-height:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0B66A0}
+.h-eyebrow::before{content:"";width:36px;height:2px;background:#0F74B5}
+.h-h1{margin:22px 0 0;max-width:480px;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:50px;line-height:1.08;letter-spacing:-.01em;color:#0E1F3D;text-wrap:balance}
+.h-h1 span{color:#0F74B5}
+.h-h1 .h-nb{color:inherit;white-space:nowrap}
+.h-trust{width:100%;max-width:460px;margin-top:38px;padding-top:22px;border-top:1px solid rgba(14,31,61,.16)}
+.h-trust-l{font-size:12.5px;line-height:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0B66A0}
+.h-root .h-trust-ul{display:flex;flex-wrap:wrap;gap:10px 30px;margin:14px 0 0;padding:0;list-style:none}
+.h-trust-ul li{display:inline-flex;align-items:center;gap:9px;font-size:15px;line-height:22px;font-weight:500;color:#0E1F3D}
+.h-trust-ul svg{flex:none;color:#1B4584}
+.h-p{margin:0;max-width:420px;font-size:18px;line-height:1.65;color:#33445F}
+.h-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:36px}
+.h-btn{display:inline-flex;align-items:center;gap:18px;min-height:60px;padding:8px 8px 8px 30px;border-radius:999px;background:#1B4584;color:#ffffff !important;font-size:16px;font-weight:600;transition:background .2s ease}
+.h-btn:hover{background:#0E1F3D}
+.h-btn .ic{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#ffffff;color:#1B4584}
+.h-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:16px;font-weight:600;color:#0B66A0 !important;border-bottom:2px solid transparent}
+.h-link:hover{border-bottom-color:#0B66A0}
+.h-pic{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#ffffff;border:1px solid #C9DBF0;color:#1B4584}
+.h-pl{font-size:15px;font-weight:600;color:#0E1F3D}
+
+.h-art{position:relative;z-index:1}
+.h-arch2{position:absolute;left:50%;bottom:0;width:430px;height:690px;margin-left:-215px;border:1.5px solid rgba(27,69,132,.26);border-bottom:0;border-radius:215px 215px 0 0}
+.h-arch{position:absolute;left:50%;bottom:0;width:384px;height:650px;margin-left:-192px;border-radius:192px 192px 0 0;background:linear-gradient(180deg,#94BBE4 0%,#BBD3EE 62%,#DCE8F6 100%)}
+.h-statue{position:absolute;left:50%;bottom:-52px;height:750px;width:auto;transform:translateX(-50%);filter:drop-shadow(0 28px 34px rgba(14,31,61,.30));max-width:none}
+
+.h-areas-d{position:relative;z-index:3;align-self:center;padding-bottom:40px}
+.h-ah{margin:0 0 14px;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:24px;line-height:30px;color:#0E1F3D}
+.h-areas-d ul{display:flex;flex-direction:column;gap:0}
+.h-areas-d li{border-bottom:1px solid rgba(14,31,61,.10);padding:2px 0}
+.h-areas-d li:last-child{border-bottom:0}
+.h-row{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 8px 8px 8px;border-radius:999px;font-size:15px;font-weight:500;color:#0E1F3D;transition:background .2s ease,box-shadow .2s ease}
+.h-row:hover{background:rgba(255,255,255,.62)}
+.h-row.on{background:#ffffff;box-shadow:0 12px 30px rgba(14,31,61,.10)}
+.h-ric{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;background:#ffffff;border:1px solid #C9DBF0;color:#1B4584;transition:background .2s ease,color .2s ease}
+.h-row:hover .h-ric{border-color:#1B4584;color:#1B4584}
+.h-row.on .h-ric{background:#1B4584;border-color:#1B4584;color:#ffffff}
+
+/* panel (tablet + phone) */
+.h-panel{display:none;position:relative;z-index:5;background:#ffffff;border-radius:28px 28px 0 0;margin-top:-40px;box-shadow:0 -14px 40px rgba(14,31,61,.08)}
+.h-panel .h-wrap{padding-top:36px;padding-bottom:48px}
+.h-root .h-chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.h-chip{display:flex;align-items:center;gap:10px;min-height:56px;padding:8px 14px 8px 8px;border-radius:999px;background:#F2F2F0;font-size:15px;font-weight:500;line-height:1.25;color:#0E1F3D;transition:background .2s ease}
+.h-chip:hover{background:#E4ECF8}
+.h-chip .h-ric{width:40px;height:40px}
+
+
+.h-all{display:none}
+/* tablet */
+@media (max-width:1023px){
+  .h-wrap{padding:0 32px}
+  .h-inner{grid-template-columns:minmax(0,1fr) 300px;padding:44px 32px 0;min-height:0}
+  .h-areas-d{display:none}
+  .h-panel{display:block}
+  .h-copy{padding-bottom:84px}
+  .h-h1{font-size:41px;margin:20px 0 0;max-width:none}
+  .h-art{min-height:560px}
+  .h-arch{width:280px;height:470px;margin-left:-140px;border-radius:140px 140px 0 0}
+  .h-arch2{width:312px;height:510px;margin-left:-156px;border-radius:156px 156px 0 0}
+  .h-statue{height:590px;bottom:-14px}
+}
+/* nav collapses */
+@media (max-width:860px){
+  .h-nav .h-wrap{display:flex;justify-content:space-between;min-height:80px}
+  .h-links,.h-nav .h-wrap > .h-pillbtn{display:none}
+  .h-burger{display:inline-flex}
+  .h-menu{display:flex}
+  .h-logo img{height:54px}
+}
+/* phone */
+@media (max-width:640px){
+  .h-wrap{padding:0 20px}
+  .h-top .h-wrap{justify-content:center}
+  .h-hours,.h-email{display:none}
+  .h-ti{min-height:44px;font-size:16px}
+  .h-eyebrow{font-size:14px}
+  .h-nav .h-wrap{min-height:72px}
+  .h-logo img{height:50px}
+  .h-menu{padding:8px 20px 24px}
+  .h-inner{grid-template-columns:minmax(0,1fr);padding:34px 20px 0}
+  .h-copy{padding-bottom:0}
+  .h-h1{font-size:34px;line-height:1.12;margin:18px 0 0}
+  .h-actions{flex-direction:column;align-items:stretch;gap:6px;width:100%;margin-top:26px}
+  .h-btn{justify-content:space-between;width:100%}
+  .h-link{justify-content:center}
+  .h-art{min-height:470px;margin-top:22px}
+  .h-arch{width:270px;height:400px;margin-left:-135px;border-radius:135px 135px 0 0}
+  .h-arch2{width:310px;height:430px;margin-left:-155px;border-radius:155px 155px 0 0}
+  .h-statue{height:484px;bottom:-22px}
+  .h-panel .h-wrap{padding-top:30px;padding-bottom:40px}
+  .h-root .h-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .h-chip{font-size:16px}
+}
+
+.ft-slim-brand{display:flex;flex-direction:column;align-items:center;text-align:center;padding:48px 0 36px}
+.ft-slim-brand .ft-logo{height:88px}
+/* footer / let's talk */
+.ft{position:relative;overflow:hidden;contain:paint;color:#ffffff;background:linear-gradient(160deg,#0E1F3D 0%,#122B55 55%,#1B4584 135%)}
+.ft-top{position:relative;overflow:hidden}
+.ft-arc{position:absolute;right:-170px;top:-250px;width:500px;height:500px;border:1.5px solid rgba(148,187,228,.12);border-radius:50%;pointer-events:none}
+.ft-wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 40px}
+.ft-cta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px 40px;padding:96px 0 64px}
+.ft-talk{display:flex;align-items:center;gap:24px}
+.ft-h2{margin:0;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:64px;line-height:1.05;letter-spacing:-.01em;color:#ffffff}
+.ft .ft-go{display:inline-flex;align-items:center;justify-content:center;flex:none;width:64px;height:64px;border-radius:50%;background:#ffffff;color:#0E1F3D;transition:background .25s ease,transform .25s ease}
+.ft .ft-go:hover{background:#94BBE4;transform:translateX(4px)}
+.ft .ft-book{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 34px;border-radius:999px;background:#94BBE4;color:#0E1F3D;font-size:16px;font-weight:700;transition:background .2s ease}
+.ft .ft-book:hover{background:#ffffff}
+.ft-rule{height:1px;background:rgba(255,255,255,.14)}
+.ft-r2,.ft-menu{display:none}
+.ft-cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,1fr);grid-template-areas:"contact logo areas";gap:56px;padding:64px 0}
+.ft-contact{grid-area:contact}
+.ft-brand{grid-area:logo;display:flex;flex-direction:column;align-items:center;text-align:center}
+.ft-areas{grid-area:areas}
+.ft .ft-list{display:flex;flex-direction:column;gap:18px}
+.ft-item{display:flex;align-items:flex-start;gap:16px}
+.ft-ic{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(148,187,228,.40);color:#94BBE4}
+.ft-lab{display:block;font-size:13px;line-height:16px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C9DBF0}
+.ft-val{display:block;margin-top:4px;font-size:16px;line-height:1.5;color:#ffffff}
+.ft .ft-txt{padding-top:2px}
+.ft a.ft-val{display:inline-flex;align-items:center;min-height:44px;margin-top:-6px;border-bottom:1px solid transparent}
+.ft a.ft-val:hover{color:#94BBE4}
+.ft-logo{display:block;height:104px;width:auto}
+.ft-tag{margin:18px 0 0;max-width:250px;font-size:16px;line-height:1.6;color:#C9DBF0}
+.ft-ah{margin:0 0 14px;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:24px;line-height:30px;color:#94BBE4}
+.ft .ft-links{display:flex;flex-direction:column;gap:0}
+.ft .ft-links a{display:inline-flex;align-items:center;min-height:44px;font-size:16px;color:#ffffff;border-bottom:1px solid transparent}
+.ft .ft-links a:hover{color:#94BBE4}
+.ft-sub{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 32px;padding:10px 0}
+.h-root .ft-nl,.h-root .ft-legal{display:flex;flex-wrap:wrap;gap:0 28px;margin:0;padding:0;list-style:none}
+.ft .ft-nl a,.ft .ft-legal a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;line-height:20px;color:#ffffff}
+.ft .ft-legal a{color:#C9DBF0}
+.ft .ft-nl a:hover,.ft .ft-legal a:hover{color:#94BBE4}
+.ft-copy{padding:24px 0 30px;text-align:center;font-size:14px;line-height:22px;color:#C9DBF0}
+@media (prefers-reduced-motion:reduce){.ft .ft-go,.ft .ft-book{transition:none}.ft .ft-go:hover{transform:none}}
+@media (max-width:1023px){
+  .ft-wrap{padding:0 32px}
+  .ft-cta{flex-direction:column;justify-content:center;text-align:center;padding:80px 0 52px;gap:30px}
+  .ft-arc{width:420px;height:420px;right:-150px;top:-210px}
+  .ft-h2{font-size:56px}
+  .ft-cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"logo logo" "contact areas";gap:48px 40px;padding:52px 0}
+    }
+@media (max-width:640px){
+  .ft-lab{font-size:14px}
+  .ft-wrap{padding:0 20px}
+  .ft-cta{align-items:stretch;text-align:left;padding:64px 0 40px;gap:24px}
+  .ft-arc{width:320px;height:320px;right:-130px;top:-150px}
+  .ft-talk{justify-content:space-between}
+  .ft-h2{font-size:44px}
+  .ft .ft-go{width:56px;height:56px}
+  .ft .ft-book{width:100%;min-height:56px}
+  .ft-cols{grid-template-columns:minmax(0,1fr);grid-template-areas:"contact" "logo" "areas";gap:40px;padding:40px 0}
+  .ft-brand{align-items:flex-start;text-align:left}
+  .ft-tag{max-width:none}
+  .ft-sub{flex-direction:column;align-items:flex-start;padding:12px 0}
+  .h-root .ft-nl{gap:0 24px}
+  .ft .ft-nl a,.ft .ft-legal a{font-size:16px}
+  .ft-slim-brand{align-items:flex-start;text-align:left;padding:40px 0 28px}
+  .ft-copy{text-align:left;font-size:16px;line-height:24px;padding:22px 76px 72px 0}
+    }
+
+/* ===== preview pattern (home) ===== */
+@keyframes nv-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){.nv{animation:nv-rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}}}
+.pv{padding:80px 0}
+.pv-w{background:#ffffff}.pv-o{background:#F2F2F0}
+.pv-wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.pv-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px 32px}
+.pv-eyebrow{display:flex;align-items:center;gap:14px;font-size:13px;line-height:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0B66A0}
+.pv-eyebrow::before{content:"";width:36px;height:2px;background:#0B66A0}
+.pv-eyebrow + .pv-h2{margin-top:18px}
+.pv-h2{margin:0;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:40px;line-height:1.12;letter-spacing:-.01em;color:#0E1F3D}
+.pv-bar{display:block;width:56px;height:4px;margin-top:22px;border-radius:4px;background:#94BBE4}
+.h-root a.pv-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16px;font-weight:600;color:#0B66A0;border-bottom:2px solid transparent}
+.pv-link svg{flex:none;transition:transform .2s ease}
+.h-root a.pv-link:hover{border-bottom-color:#0B66A0}
+.pv-link:hover svg{transform:translateX(4px)}
+.h-root a.pv-bot{display:none}
+.pv.at-ph{display:none}
+.h-pm{display:none}
+.h-root a.ta-c{color:#0E1F3D}.h-root a.at-t{color:#ffffff}
+.h-root .pv a:focus-visible{outline:3px solid #0F74B5;outline-offset:3px;border-radius:8px}
+/* trust bar */
+.tb2{background:#ffffff;border-bottom:1px solid #E6ECF4}
+.tb2-in{max-width:1280px;margin:0 auto;padding:0 40px;min-height:88px;display:flex;align-items:center;gap:16px 32px;flex-wrap:wrap}
+.tb2-l{font-size:12.5px;line-height:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#0B66A0}
+.h-root .tb2-ul{display:flex;flex-wrap:wrap;gap:12px 16px;margin:0;padding:0;list-style:none}
+.tb2-b{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px 0 12px;border:1px solid #D5DFEC;border-radius:999px;font-size:15px;font-weight:500;color:#0E1F3D}
+.tb2-b svg{color:#1B4584;flex:none}
+.tb2 .pv-link{margin-left:auto}
+/* about preview */
+.ap3-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 96px;align-items:start}
+.ap3-p{margin:0;font-size:19px;line-height:1.65;color:#33445F;max-width:560px}
+.h-root a.ap3-lk{margin-top:6px}
+.ap3-lead{display:flex;align-items:center;gap:24px;margin:40px 0 0;font-size:19px;line-height:28px;font-weight:600;color:#0E1F3D}
+.ap3-lead::after{content:"";flex:1;height:1px;background:rgba(14,31,61,.12)}
+.h-root .ap3-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:24px 0 0;padding:0;list-style:none;background:#ffffff;border:1px solid #E6ECF4;border-radius:16px;box-shadow:0 10px 30px rgba(14,31,61,.06)}
+.ap3-i{display:flex;align-items:center;gap:18px;padding:22px 28px}
+.ap3-i + .ap3-i{border-left:1px solid #E6ECF4}
+.ap3-ic{display:inline-flex;align-items:center;justify-content:center;flex:none;width:52px;height:52px;border-radius:50%;border:1.5px solid #C9DBF0;color:#1B4584}
+.ap3-n{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:20px;line-height:1;font-variant-numeric:lining-nums;color:#5A97D0}
+.ap3-t{font-family:'Marcellus',Georgia,serif;font-size:26px;line-height:1.15;color:#0E1F3D}
+/* who we serve */
+.h-root .wo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:36px 0 0;padding:0;list-style:none}
+.wo-c{position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;gap:20px;min-height:112px;box-sizing:border-box;padding:20px 22px 20px 24px;border-radius:18px;transition:transform .25s ease,box-shadow .25s ease}
+.wo-c:hover{transform:translateY(-3px)}
+.h-root a.wo-w{color:#0E1F3D}.h-root a.wo-n{color:#ffffff}
+.wo-w{background:#ffffff;border:1px solid #E1E8F2;color:#0E1F3D;box-shadow:0 10px 30px rgba(14,31,61,.07)}
+.wo-n{background:#0E1F3D;color:#ffffff;box-shadow:0 14px 36px rgba(14,31,61,.22)}
+.wo-n::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0,rgba(255,255,255,.05) 1px,transparent 1px,transparent 84px);background-position:42px 0}
+.wo-ic{display:inline-flex;align-items:center;justify-content:center;flex:none;width:56px;height:56px;border-radius:50%;border:1.5px solid #C9DBF0;color:#1B4584}
+.wo-n .wo-ic{border-color:rgba(148,187,228,.5);color:#ffffff}
+.wo-t{flex:1;min-width:0;font-family:'Marcellus',Georgia,serif;font-size:32px;line-height:1.15}
+.wo-go{display:inline-flex;align-items:center;justify-content:center;flex:none;width:48px;height:48px;border-radius:50%;background:#0E1F3D;color:#ffffff;transition:background .2s ease}
+.wo-n .wo-go{background:#ffffff;color:#0E1F3D}
+.wo-w:hover .wo-go{background:#1B4584}
+.wo-n:hover .wo-go{background:#94BBE4}
+/* areas tiles */
+.h-root .at-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:36px 0 0;padding:0;list-style:none}
+.at-grid>li{display:flex;min-width:0}
+.at-t{position:relative;flex:1;min-width:0;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#0E1F3D;box-shadow:0 8px 24px rgba(14,31,61,.10);transition:transform .25s ease,box-shadow .25s ease}
+.at-t:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(14,31,61,.18)}
+.at-m{position:relative;display:block;aspect-ratio:3/2;overflow:hidden}
+.at-i{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.at-t:hover .at-i{transform:scale(1.04)}
+.at-p{position:absolute;top:12px;left:12px;z-index:2;padding:4px 11px;border-radius:999px;background:#ffffff;color:#0E1F3D;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.06em;font-variant-numeric:lining-nums}
+.at-b{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 18px 0 20px;background:#0E1F3D;color:#ffffff;transition:background .25s ease}
+.at-t:hover .at-b{background:#1B4584}
+.at-n{font-family:'Marcellus',Georgia,serif;font-size:20px;line-height:1.2;color:#ffffff}
+.at-b svg{flex:none;color:#94BBE4}
+.at-go{display:inline-flex;align-items:center;flex:none}
+/* how we work */
+.h-root .hw3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:44px 0 0;padding:0;list-style:none}
+.hw3-s{position:relative}
+.hw3-s::after{content:"";position:absolute;top:27px;left:72px;right:-12px;height:1.5px;background:#94BBE4}
+.hw3-s:last-child::after{display:none}
+.hw3-c{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#ffffff;border:2px solid #94BBE4;font-size:20px;font-weight:600;font-variant-numeric:lining-nums;color:#0E1F3D}
+.hw3-t{margin:18px 0 0;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:26px;line-height:1.2;color:#0E1F3D}
+.hw3-ph{margin:10px 0 0;font-size:16px;line-height:1.6;color:#2A3A55}
+.hw3-g,.hw3-ck{display:none}
+.h-root .ta-foot{display:none}
+/* team arches */
+.h-root .ta-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:44px 0 0;padding:0;list-style:none}
+.ta-grid>li{display:flex;justify-content:center;min-width:0}
+.ta-c{display:flex;flex-direction:column;align-items:center;text-align:center;min-height:44px}
+.ta-fr{position:relative;width:240px;height:300px;margin:0 0 0 12px;transition:transform .3s ease}
+.ta-fr::before{content:"";position:absolute;inset:0;transform:translate(-12px,12px);border:2px solid #94BBE4;border-radius:120px 120px 0 0;transition:border-color .3s ease}
+.ta-ph{position:absolute;inset:0;overflow:hidden;border-radius:120px 120px 0 0;background:#0E1F3D}
+.ta-img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;display:block}
+.ta-c:hover .ta-fr,.ta-c:focus-visible .ta-fr{transform:translateY(-8px)}
+.ta-c:hover .ta-fr::before,.ta-c:focus-visible .ta-fr::before{border-color:#0E1F3D}
+.ta-n{margin:30px 0 0;font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:26px;line-height:1.15;color:#0E1F3D}
+.ta-r{margin:8px 0 0;font-size:16px;line-height:1.5;color:#2A3A55}
+/* faq preview */
+.h-root .fp-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px;margin:32px 0 0;padding:0;list-style:none}
+.fp-i{border-top:1px solid #D5DFEC}
+.fp-i:nth-child(n+2):nth-child(-n+2){}
+.fp-list>li:last-child,.fp-list>li:nth-last-child(2){border-bottom:1px solid #D5DFEC}
+.h-root a.fp-a{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;padding:10px 0;font-size:18px;line-height:1.4;color:#6B7C99}
+.fp-q{font-style:italic;text-decoration:underline dashed;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:rgba(107,124,153,.7)}
+.fp-pm{display:inline-flex;align-items:center;justify-content:center;flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid #C9DBF0;color:#1B4584;transition:background .2s ease,color .2s ease}
+.fp-a:hover .fp-pm{background:#1B4584;border-color:#1B4584;color:#ffffff}
+/* insights list */
+.h-root .il{margin:32px 0 0;padding:0;list-style:none;border-top:1px solid #D5DFEC}
+.il>li{border-bottom:1px solid #D5DFEC}
+.h-root a.il-r{display:grid;grid-template-columns:200px minmax(0,1fr) auto;align-items:center;gap:24px;min-height:96px;padding:14px 20px;color:#0E1F3D;transition:background .2s ease}
+.il-r:hover{background:#EAF2FB}
+.il-d{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#0F74B5}
+.il-d svg{flex:none}
+.il-t{font-family:'Marcellus',Georgia,serif;font-weight:400;font-size:28px;line-height:1.2;color:#0E1F3D;transition:color .2s ease}
+.il-r:hover .il-t{color:#0F74B5}
+.il-go{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1.5px solid #94BBE4;color:#0E1F3D;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.il-r:hover .il-go{background:#0E1F3D;border-color:#0E1F3D;color:#ffffff}
+@media (prefers-reduced-motion:reduce){.wo-c,.at-t,.at-i,.ta-fr,.pv-link svg{transition:none}.wo-c:hover,.at-t:hover,.ta-c:hover .ta-fr{transform:none}}
+@media (max-width:1023px){
+  .pv{padding:64px 0}
+  .pv-wrap,.tb2-in{padding-left:32px;padding-right:32px}
+  .pv-h2{font-size:36px}
+  .ap3-top{grid-template-columns:minmax(0,1fr);gap:20px}
+  .ap3-i{padding:18px 18px;gap:12px}
+  .ap3-ic{width:44px;height:44px}
+  .ap3-t{font-size:22px}
+  .wo-t{font-size:28px}
+  .h-root .at-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .h-root .hw3{gap:16px}
+  .hw3-t{font-size:22px}
+  .ta-fr{width:200px;height:252px}
+  .ta-fr::before,.ta-ph{border-radius:100px 100px 0 0}
+  .ta-n{font-size:22px}
+  .h-root .fp-list{gap:0 40px}
+  .h-root a.il-r{grid-template-columns:170px minmax(0,1fr) auto;gap:16px;padding:14px 12px}
+  .il-t{font-size:26px}
+}
+@media (max-width:640px){
+  .pv{padding:56px 0}
+  .pv-wrap,.tb2-in{padding-left:20px;padding-right:20px}
+  .pv-h2{font-size:32px}
+  .pv-bar{margin-top:20px}
+  .pv-head{align-items:flex-start;flex-direction:column;gap:6px}
+  .tb2-in{padding-top:20px;padding-bottom:12px;gap:12px}
+  .h-root .tb2-ul{flex-direction:column;align-items:flex-start;gap:10px}
+  .tb2 .pv-link{margin-left:0}
+  .ap3-p{font-size:17px}
+  .ap3-lead{margin-top:28px;font-size:17px;gap:16px}
+  .h-root .ap3-row{grid-template-columns:minmax(0,1fr)}
+  .ap3-i{padding:14px 18px}
+  .ap3-i + .ap3-i{border-left:0;border-top:1px solid #E6ECF4}
+  .ap3-t{font-size:24px}
+  .h-root .wo-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:24px}
+  .wo-c{min-height:96px;padding:16px 16px 16px 18px;gap:16px}
+  .wo-ic{width:48px;height:48px}
+  .wo-t{font-size:26px}
+  .h-root .at-grid{display:flex;gap:12px;margin:24px -20px 0;padding:4px 20px 12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .at-grid::-webkit-scrollbar{display:none}
+  .at-grid>li{flex:0 0 78%;scroll-snap-align:start}
+  .h-root .hw3{grid-template-columns:minmax(0,1fr);gap:0;margin-top:28px}
+  .hw3-s{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:20px;align-items:center;min-height:56px;padding-bottom:28px}
+  .hw3-s:last-child{padding-bottom:0}
+  .hw3-s::after{top:56px;left:27px;right:auto;width:1.5px;height:calc(100% - 56px)}
+  .hw3-t{margin:0;font-size:26px}
+  .hw3-ph{grid-column:2;margin-top:6px}
+  .h-root .ta-grid{display:flex;gap:16px;margin:28px -20px 0;padding:4px 20px 14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .ta-grid::-webkit-scrollbar{display:none}
+  .ta-grid>li{flex:0 0 68%;scroll-snap-align:start}
+  .ta-fr{width:200px;height:252px}
+  .h-root .fp-list{grid-template-columns:minmax(0,1fr);margin-top:24px}
+  .fp-list>li:nth-last-child(2){border-bottom:0}
+  .h-root a.fp-a{min-height:64px;font-size:17px}
+  .h-root .il{margin-top:24px}
+  .h-root a.il-r{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"d go" "t go";gap:4px 12px;min-height:88px;padding:14px 8px}
+  .il-d{grid-area:d;font-size:14px}
+  .il-t{grid-area:t;font-size:24px}
+  .il-go{grid-area:go}
+}
+
+/* ===== type system ===== */
+.h-root{font-synthesis:none}
+.h-root :is(h1,h2,h3,h4,.h-h1,.pg-h1){font-family:'Marcellus',Georgia,serif !important;font-weight:400 !important;font-synthesis:none !important}
+:where(.h-root) :is(h1,h2,h3){text-wrap:balance}
+.h-root :is(h1,.h-h1,.pg-h1){font-size:56px !important;line-height:1.15 !important}
+.h-root h2:not(.h-ah):not(.ft-ah):not(.in-title){font-size:44px !important;line-height:1.15 !important}
+.h-root :is(h3,.h-ah,.ft-ah,.in-title){font-size:28px !important;line-height:1.2 !important}
+/* body */
+.h-root :is(.ap3-p,.ab-p,.wh-p,.ar-p,p.at-p,.at-lead,.in-ex,.bl-ex){font-family:'DM Sans',system-ui,sans-serif !important;font-size:18px !important;line-height:1.65 !important;color:#2A3A55 !important;max-width:65ch}
+/* small text, eyebrows, labels */
+.h-top{font-size:14px !important}
+.h-root :is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow,.tb2-l,.tm-mem-h,.te-mem-h,.h-trust-l){font-family:'DM Sans',system-ui,sans-serif !important;font-size:13px !important;line-height:16px !important;font-weight:600 !important;text-transform:uppercase;letter-spacing:.14em !important}
+.h-root :is(.ft-lab,.ct-lab,.vs-lab,.vu-lab){font-size:14px !important;letter-spacing:.14em !important}
+.h-root span.at-p{font-size:14px !important;line-height:18px !important}
+/* placeholders */
+.h-root :is(.fq-a,.fp-q,.ta-r,.hw3-ph,.ct-ph){font-style:normal !important;text-decoration:none !important}
+/* numerals */
+.h-root :is(.ap3-n,span.at-p,.hw3-c,.hw-c,.pl-num,.pl-z,.ar-num,.ab-num,.ab-z,.fs-n:not(.fs-w)){font-family:'DM Sans',system-ui,sans-serif !important;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1}
+.h-root .fs-w{font-family:'Marcellus',Georgia,serif}
+/* buttons and links */
+.h-root :is(.h-btn,.h-link,.h-pillbtn,.h-all,.h-links a,.h-row,.h-chip,.pv-link,.ft-book,.ar-btn,.cl-book,.at-submit,.ct-submit,.fq-pill,.ar-all,.bl-all,.bl-more,.in-more,.te-all,.ws-lk,.ab-link,.ct-act,.vs-maps,.mp-btn,.ap-pill,.h-menu a.l,.h-menu .h-pillbtn){font-family:'DM Sans',system-ui,sans-serif !important;font-size:16px !important;font-weight:600 !important}
+@media (max-width:1023px){
+  .h-root :is(h1,.h-h1,.pg-h1){font-size:44px !important}
+  .h-root h2:not(.h-ah):not(.ft-ah):not(.in-title){font-size:36px !important}
+  .h-root :is(h3,.h-ah,.ft-ah,.in-title){font-size:24px !important}
+  .h-root :is(.ap3-p,.ab-p,.wh-p,.ar-p,p.at-p,.at-lead,.in-ex,.bl-ex){font-size:17px !important}
+}
+@media (max-width:640px){
+  .h-root :is(h1,.h-h1,.pg-h1){font-size:34px !important}
+  .h-root h2:not(.h-ah):not(.ft-ah):not(.in-title){font-size:30px !important}
+  .h-root :is(h3,.h-ah,.ft-ah,.in-title){font-size:22px !important}
+  .h-root :is(.ap3-p,.ab-p,.wh-p,.ar-p,p.at-p,.at-lead,.in-ex,.bl-ex){font-size:16px !important}
+  .h-root :is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow,.tb2-l,.tm-mem-h,.te-mem-h,.h-trust-l){font-size:12px !important}
+}
+
+/* ===== clean accents: no dash ornaments ===== */
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow){gap:8px !important;align-items:center !important}
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow)::before{content:"" !important;display:block !important;flex:none !important;width:6px !important;height:6px !important;border-radius:50% !important;background:#94BBE4 !important;margin:0 !important}
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow) + :is(h1,h2){margin-top:10px !important}
+:is(.pv-bar,.sec-bar,.ws-bar,.ar-bar,.bl-bar,.pg-hair){display:none !important}
+:is(.h-eyebrow,.pv-eyebrow,.sec-eyebrow,.ab-eyebrow,.ws-eyebrow)::after{content:none !important}
+.h-root .pv-head + :not(.at-reg){margin-top:16px !important}
+@media (max-width:640px){.ap3-lead::after{display:none !important}}
+
+/* ===== mobile footer ===== */
+@media (max-width:640px){
+  .ft-full .ft-wrap{padding:0 24px}
+  .ft-full .ft-arc{width:320px;height:320px;right:-130px;top:-150px}
+  .ft-full .ft-cta{display:flex;flex-direction:column;align-items:stretch;text-align:left;gap:20px;padding:48px 0 28px}
+  .ft-full .ft-talk{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .h-root .ft-full h2.ft-h2{font-size:34px !important;line-height:1.1 !important;text-wrap:balance}
+  .ft-full .ft-go{width:44px;height:44px}
+  .ft-full .ft-go svg{width:20px;height:20px}
+  .ft-full .ft-book{width:100%;min-height:56px;height:56px;padding:0 24px;box-sizing:border-box;background:#94BBE4;color:#0E1F3D}
+  .ft-full .ft-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"contact contact" "r2 r2" "logo logo" "areas menu";gap:0 24px;padding:0 0 28px}
+  .ft-full.ft-nocta .ft-cols{padding-top:48px}
+  .ft-full .ft-menu{display:block;grid-area:menu}
+  .ft-full .ft-r2{display:block;grid-area:r2}
+  .ft-full .ft-contact{padding:28px 0}
+  .ft-full.ft-nocta .ft-contact{padding-top:0}
+  .ft-full .ft-list{display:flex;flex-direction:column;gap:16px;padding-right:72px}
+  .ft-full .ft-item:nth-child(2){order:2}
+  .ft-full .ft-item:nth-child(3){order:1}
+  .ft-full .ft-item:nth-child(4){order:3}
+  .ft-full .ft-item{gap:16px;align-items:flex-start}
+  .ft-full .ft-ic{width:44px;height:44px;border:1.5px solid #94BBE4}
+  .ft-full .ft-txt{padding-top:0;min-width:0}
+  .h-root .ft-full .ft-lab{font-size:12px !important;line-height:16px;letter-spacing:.14em !important;color:#C9DBF0}
+  .ft-full .ft-val{margin-top:2px;font-size:16px;line-height:1.5;overflow-wrap:anywhere}
+  .ft-full a.ft-val{min-height:0;margin-top:2px}
+  .ft-full .ft-brand{padding:28px 0 0;align-items:flex-start;text-align:left}
+  .ft-full .ft-logo{height:56px}
+  .ft-full .ft-tag{margin:12px 0 0;max-width:260px;font-size:15px;line-height:1.5}
+  .ft-full .ft-areas,.ft-full .ft-menu{margin-top:28px;min-width:0}
+  .h-root .ft-full h2.ft-ah{margin:0 0 8px;font-size:18px !important;line-height:24px !important;color:#94BBE4}
+  .ft-full .ft-links{display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+  .ft .ft-links a,.ft .ft-nl a,.ft .ft-legal a{color:rgba(255,255,255,.9) !important}
+  .ft-full .ft-links a{display:flex;align-items:center;min-height:40px;padding:0;font-size:15px !important;line-height:20px;font-weight:400 !important}
+  .ft-full .ft-sub nav{display:none}
+  .ft-full .ft-sub,.ft .ft-sub{display:block;padding:24px 0 0}
+  .h-root .ft .ft-legal{display:flex;flex-wrap:wrap;gap:0 16px;margin:0;padding:0;list-style:none}
+  .ft .ft-legal a{display:inline-flex;align-items:center;min-height:36px;font-size:14px !important;line-height:20px;font-weight:400 !important}
+  .ft-full .ft-sub + .ft-rule{display:none}
+  .ft-copy,.ft .ft-copy{padding:20px 0 72px;text-align:center;font-size:13px;line-height:20px;color:#C9DBF0}
+  .ft-slim-brand{padding:40px 0 28px}
+  .ft:not(.ft-full) .ft-sub{padding:24px 0 0}
+  .ft:not(.ft-full) .ft-nl{margin-bottom:8px}
+  .ft:not(.ft-full) .ft-sub + .ft-rule{display:none}
+}
+</style>
+</helmet>
+
+<div class="h-root">
+
+  <!-- Contact bar -->
+  <div class="h-top">
+    <div class="h-wrap">
+      <span class="h-ti h-hours"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon to Fri: 9.00am to 5.00pm</span></span>
+      <div class="h-top-r">
+        <a class="h-ti h-email" href="mailto:info@aswlaw.africa"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>info@aswlaw.africa</span></a>
+        <a class="h-ti" href="tel:+254788685911"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+254 788685911</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="h-nav">
+    <div class="h-wrap">
+      <a class="h-logo" href="Main.dc.html" aria-label="ASW Law Advocates LLP, home"><img src="../assets/logo.png" alt="ASW Law Advocates LLP"></a>
+      <nav class="h-links" aria-label="Primary">
+        <a class="cur" href="Main.dc.html" aria-current="page">Home</a>
+        <a href="About.dc.html">About Us</a>
+        <a href="Areas.dc.html">Areas Of Practice</a>
+        <a href="Insights.dc.html">Insights</a>
+        <a href="Contact.dc.html">Contact Us</a>
+      </nav>
+      <a class="h-pillbtn" href="Book.dc.html">Book Appointment</a>
+      <button class="h-burger" type="button" aria-label="{{burgerLabel}}" aria-expanded="{{open}}" onClick="{{toggle}}">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{burgerPath}}"/></svg>
+      </button>
+    </div>
+    <sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+      <nav class="h-menu" aria-label="Mobile">
+        <a class="l cur" href="Main.dc.html" aria-current="page">Home</a>
+        <a class="l" href="About.dc.html">About Us</a>
+        <a class="l" href="Areas.dc.html">Areas Of Practice</a>
+        <a class="l" href="Insights.dc.html">Insights</a>
+        <a class="l" href="Contact.dc.html">Contact Us</a>
+        <a class="h-pillbtn" href="Book.dc.html">Book Appointment</a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-hero" aria-labelledby="hero-title">
+    <div class="h-inner">
+      <div class="h-copy">
+        <div class="h-eyebrow">ASW LAW ADVOCATES LLP</div>
+        <h1 class="h-h1" id="hero-title">We offer <span class="h-nb">world-class</span> <span>legal representation</span></h1>
+        <div class="h-actions">
+          <a class="h-btn" href="Book.dc.html"><span>Book Appointment</span><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a>
+          <a class="h-link" href="About.dc.html"><span>Learn More</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="h-art" aria-hidden="false">
+        <div class="h-arch2"></div>
+        <div class="h-arch"></div>
+        <img class="h-statue" src="../assets/justice.png" alt="Bronze statue of blindfolded Lady Justice holding scales and a sword">
+      </div>
+
+      <nav class="h-areas-d" aria-label="Areas of practice">
+        <h2 class="h-ah">Areas of Practice</h2>
+        <ul>
+          <li><a class="h-row on" href="Areas.dc.html#dispute"><span class="h-ric"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span><span>Dispute Resolution</span></a></li>
+          <li><a class="h-row" href="Areas.dc.html#commercial"><span class="h-ric"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span>Commercial and Corporate</span></a></li>
+          <li><a class="h-row" href="Areas.dc.html#procurement"><span class="h-ric"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span>Public Procurement and Tax</span></a></li>
+          <li><a class="h-row" href="Areas.dc.html#property"><span class="h-ric"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span>Property &amp; Real Estate</span></a></li>
+          <li><a class="h-row" href="Areas.dc.html#private"><span class="h-ric"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span>Private Client</span></a></li>
+          <li><a class="h-row" href="Areas.dc.html#employment"><span class="h-ric"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span>Employment and Pensions</span></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="h-panel">
+      <div class="h-wrap">
+        <h2 class="h-ah" style="margin:0">Areas of Practice</h2>
+        <ul class="h-chips">
+        <li><a class="h-chip" href="Areas.dc.html#dispute"><span class="h-ric"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span><span>Dispute Resolution</span></a></li>
+        <li><a class="h-chip" href="Areas.dc.html#commercial"><span class="h-ric"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span>Commercial and Corporate</span></a></li>
+        <li><a class="h-chip" href="Areas.dc.html#procurement"><span class="h-ric"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span><span>Public Procurement and Tax</span></a></li>
+        <li><a class="h-chip" href="Areas.dc.html#property"><span class="h-ric"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span>Property &amp; Real Estate</span></a></li>
+        <li><a class="h-chip" href="Areas.dc.html#private"><span class="h-ric"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span>Private Client</span></a></li>
+        <li><a class="h-chip" href="Areas.dc.html#employment"><span class="h-ric"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span>Employment and Pensions</span></a></li>
+        </ul>
+        <a class="h-all" href="Areas.dc.html"><span>View all areas of practice</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="tb2" aria-label="Professional memberships">
+    <div class="tb2-in">
+      <div class="tb2-l">Professional Memberships</div>
+      <ul class="tb2-ul"><li class="tb2-b"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Law Society of Kenya</span></li><li class="tb2-b"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>East Africa Law Society</span></li></ul>
+      <a class="pv-link" href="About.dc.html#team"><span>Meet the team</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- About preview -->
+  <section class="pv pv-o" aria-labelledby="ap3-t">
+    <div class="pv-wrap">
+      <div class="ap3-top nv">
+        <div>
+          <div class="pv-eyebrow">ABOUT US</div>
+          <h2 class="pv-h2" id="ap3-t">About ASW Law Advocates LLP</h2>
+        </div>
+        <div>
+          <p class="ap3-p">We are a legal practice based in Nairobi, Kenya, specializing in offering client-centric legal solutions to our clientele, which includes individuals and corporations.</p>
+          <a class="pv-link ap3-lk" href="About.dc.html"><span>Learn More about us</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <p class="ap3-lead nv">Underpinning our work ethic are 3 pillars:</p>
+      <ul class="ap3-row nv" aria-label="Our three pillars">
+        <li class="ap3-i"><span class="ap3-ic"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></span><span><span class="ap3-n" aria-hidden="true">01</span><br><span class="ap3-t">Competence</span></span></li>
+        <li class="ap3-i"><span class="ap3-ic"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span><span><span class="ap3-n" aria-hidden="true">02</span><br><span class="ap3-t">Integrity</span></span></li>
+        <li class="ap3-i"><span class="ap3-ic"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span><span><span class="ap3-n" aria-hidden="true">03</span><br><span class="ap3-t">Pragmatism</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Who we serve -->
+  <section class="pv pv-w" aria-labelledby="wo-t">
+    <div class="pv-wrap">
+      <div class="pv-head nv">
+        <div>
+          <div class="pv-eyebrow">WHO WE SERVE</div><h2 class="pv-h2" id="wo-t">Individuals and Corporations</h2>
+        </div>
+        <a class="pv-link pv-top" href="About.dc.html#who-we-are"><span>Learn more</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <ul class="wo-grid nv">
+        <li><a class="wo-c wo-w" href="About.dc.html#who-we-are"><span class="wo-ic"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span class="wo-t">Individuals</span><span class="wo-go" aria-hidden="true"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></li>
+        <li><a class="wo-c wo-n" href="About.dc.html#who-we-are"><span class="wo-ic"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span><span class="wo-t">Corporations</span><span class="wo-go" aria-hidden="true"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></li>
+      </ul>
+      <a class="pv-link pv-bot" href="About.dc.html#who-we-are"><span>Learn more</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Areas preview -->
+  <section class="pv pv-o at-dk" aria-labelledby="at-h">
+    <div class="pv-wrap">
+      <div class="pv-head nv">
+        <div>
+          <h2 class="pv-h2" id="at-h">Areas of Practice</h2>
+        </div>
+        <a class="pv-link pv-top" href="Areas.dc.html"><span>View all areas of practice</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <ul class="at-grid nv" aria-label="Areas of practice">
+        <li><a class="at-t" href="Areas.dc.html#dispute"><span class="at-m"><img class="at-i" src="../assets/area_dispute.jpg" alt=""><span class="at-p" aria-hidden="true">01</span></span><span class="at-b"><span class="at-n">Dispute Resolution</span><span class="at-go"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></span></a></li>
+        <li><a class="at-t" href="Areas.dc.html#commercial"><span class="at-m"><img class="at-i" src="../assets/area_commercial.jpg" alt=""><span class="at-p" aria-hidden="true">02</span></span><span class="at-b"><span class="at-n">Commercial and Corporate</span><span class="at-go"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></span></a></li>
+        <li><a class="at-t" href="Areas.dc.html#procurement"><span class="at-m"><img class="at-i" src="../assets/area_tax.jpg" alt=""><span class="at-p" aria-hidden="true">03</span></span><span class="at-b"><span class="at-n">Public Procurement and Tax</span><span class="at-go"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></span></a></li>
+        <li><a class="at-t" href="Areas.dc.html#property"><span class="at-m"><img class="at-i" src="../assets/area_property.jpg" alt=""><span class="at-p" aria-hidden="true">04</span></span><span class="at-b"><span class="at-n">Property &amp; Real Estate</span><span class="at-go"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></span></a></li>
+        <li><a class="at-t" href="Areas.dc.html#private"><span class="at-m"><img class="at-i" src="../assets/area_private.jpg" alt=""><span class="at-p" aria-hidden="true">05</span></span><span class="at-b"><span class="at-n">Private Client</span><span class="at-go"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></span></a></li>
+        <li><a class="at-t" href="Areas.dc.html#employment"><span class="at-m"><img class="at-i" src="../assets/area_employment.jpg" alt=""><span class="at-p" aria-hidden="true">06</span></span><span class="at-b"><span class="at-n">Employment and Pensions</span><span class="at-go"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></span></a></li>
+      </ul>
+      <a class="pv-link pv-bot" href="Areas.dc.html"><span>View all areas of practice</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section class="pv pv-w" aria-labelledby="hw-t">
+    <div class="pv-wrap">
+      <div class="pv-head nv">
+        <div>
+          <div class="pv-eyebrow">HOW WE WORK</div><h2 class="pv-h2" id="hw-t">Our Approach</h2>
+        </div>
+        <a class="pv-link pv-top" href="About.dc.html#approach"><span>Learn about our approach</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <ol class="hw3 nv" aria-label="Our approach in four steps">
+        <li class="hw3-s"><span class="hw3-c" aria-hidden="true"><span class="hw3-nm">1</span></span><h3 class="hw3-t">Consultation</h3><span class="hw3-g" aria-hidden="true">01</span></li>
+        <li class="hw3-s"><span class="hw3-c" aria-hidden="true"><span class="hw3-nm">2</span></span><h3 class="hw3-t">Advice</h3><span class="hw3-g" aria-hidden="true">02</span></li>
+        <li class="hw3-s"><span class="hw3-c" aria-hidden="true"><span class="hw3-nm">3</span></span><h3 class="hw3-t">Representation</h3><span class="hw3-g" aria-hidden="true">03</span></li>
+        <li class="hw3-s"><span class="hw3-c" aria-hidden="true"><span class="hw3-nm">4</span><svg class="hw3-ck" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><h3 class="hw3-t">Resolution</h3><span class="hw3-g" aria-hidden="true">04</span></li>
+      </ol>
+      <a class="pv-link pv-bot" href="About.dc.html#approach"><span>Learn about our approach</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Team preview -->
+  <section class="pv pv-o" aria-labelledby="ta-t">
+    <div class="pv-wrap">
+      <div class="pv-head nv">
+        <div>
+          <div class="pv-eyebrow">THE TEAM</div><h2 class="pv-h2" id="ta-t">Meet the Advocates</h2>
+        </div>
+        <a class="pv-link pv-top" href="About.dc.html#team"><span>Meet the full team</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <ul class="ta-grid nv" id="tm-track" aria-label="Our advocates" onScroll="{{onTeam}}">
+        <li class="{{tc0}}"><a class="ta-c" href="About.dc.html#team"><span class="ta-fr"><span class="ta-ph"><img class="ta-img" src="../assets/team-portrait-current.jpg" alt="Portrait of Anthony Simiyu"></span></span><span class="ta-n">Anthony Simiyu</span><span class="ta-r">Advocate</span></a></li>
+        <li class="{{tc1}}"><a class="ta-c" href="About.dc.html#team"><span class="ta-fr"><span class="ta-ph"><img class="ta-img" src="../assets/team-portrait-current.jpg" alt="Portrait of Alphonse Odido"></span></span><span class="ta-n">Alphonse Odido</span><span class="ta-r">Advocate</span></a></li>
+        <li class="{{tc2}}"><a class="ta-c" href="About.dc.html#team"><span class="ta-fr"><span class="ta-ph"><img class="ta-img" src="../assets/team-portrait-current.jpg" alt="Portrait of Roy Chidi"></span></span><span class="ta-n">Roy Chidi</span><span class="ta-r">Advocate</span></a></li>
+      </ul>
+<div class="ta-foot"><div class="at-ctl ta-ctl">
+        <div class="at-cnt">
+          <p class="at-num" aria-live="polite"><span class="at-cur">{{tcur}}</span><span class="at-tot"> / 03</span></p>
+          <span class="at-track" aria-hidden="true"><span class="{{tFill}}"></span></span>
+        </div>
+        <div class="at-btns">
+          <button class="{{tPrevCls}}" type="button" aria-label="Previous advocate" aria-disabled="{{tPrevAria}}" onClick="{{tPrev}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+          <button class="{{tNextCls}}" type="button" aria-label="Next advocate" aria-disabled="{{tNextAria}}" onClick="{{tNext}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </div></div>
+      <a class="pv-link pv-bot" href="About.dc.html#team"><span>Meet the full team</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ preview -->
+  <section class="pv pv-w" aria-labelledby="fp-t">
+    <div class="pv-wrap">
+      <div class="pv-head nv">
+        <div>
+          <div class="pv-eyebrow">FAQ</div><h2 class="pv-h2" id="fp-t">Frequently Asked Questions</h2>
+        </div>
+        <a class="pv-link pv-top" href="FAQ.dc.html"><span>View all questions</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <ul class="fp-list nv" aria-label="Frequently asked questions">
+        <li class="fp-i"><a class="fp-a" href="FAQ.dc.html"><span class="fp-q">How do I book an appointment?</span><span class="fp-pm" aria-hidden="true"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></a></li>
+        <li class="fp-i"><a class="fp-a" href="FAQ.dc.html"><span class="fp-q">What should I bring to my first consultation?</span><span class="fp-pm" aria-hidden="true"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></a></li>
+        <li class="fp-i"><a class="fp-a" href="FAQ.dc.html"><span class="fp-q">Is my information kept confidential?</span><span class="fp-pm" aria-hidden="true"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span></a></li>
+      </ul>
+      <a class="pv-link pv-bot" href="FAQ.dc.html"><span>View all questions</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Insights preview -->
+  <section class="pv pv-o" aria-labelledby="il-h">
+    <div class="pv-wrap">
+      <div class="pv-head nv">
+        <div>
+          <div class="pv-eyebrow">INSIGHTS</div><h2 class="pv-h2" id="il-h">Recent Blog Posts</h2>
+        </div>
+        <a class="pv-link pv-top" href="Insights.dc.html"><span>All Blog Posts</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <ul class="il nv" aria-label="Recent blog posts">
+        <li><a class="il-r" href="Article.dc.html"><span class="il-d"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>June 24, 2025</span></span><span class="il-t">Know about Industrial Laws</span><span class="il-go" aria-hidden="true"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></li>
+        <li><a class="il-r" href="ArticleMarriage.dc.html"><span class="il-d"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>June 24, 2025</span></span><span class="il-t">Flexibility of marriage in US</span><span class="il-go" aria-hidden="true"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></li>
+      </ul>
+      <a class="pv-link pv-bot" href="Insights.dc.html"><span>All Blog Posts</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
+
+  <!-- Let's Talk + footer -->
+  <footer class="ft ft-full" aria-label="Contact and footer">
+    <div class="ft-top">
+      <div class="ft-arc" aria-hidden="true"></div>
+      <div class="ft-wrap">
+      <div class="ft-cta">
+        <div class="ft-talk">
+          <h2 class="ft-h2">Let&rsquo;s Talk</h2>
+          <a class="ft-go" href="Contact.dc.html" aria-label="Contact Us"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+        <a class="ft-book" href="Book.dc.html">Book Appointment</a>
+      </div>
+      </div>
+    </div>
+    <div class="ft-wrap">
+      <div class="ft-rule"></div>
+      <div class="ft-cols">
+        <div class="ft-contact">
+          <ul class="ft-list">
+            <li class="ft-item"><span class="ft-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div class="ft-txt"><span class="ft-lab">Phone</span><a class="ft-val" href="tel:+254788685911">+254 788 685 911</a></div></li>
+            <li class="ft-item"><span class="ft-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><div class="ft-txt"><span class="ft-lab">Address</span><span class="ft-val">Tourism Fund Building, Mezzanine Floor, Office M08, Off-Bishop Rd, Community Area, Nairobi, Kenya</span></div></li>
+            <li class="ft-item"><span class="ft-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><div class="ft-txt"><span class="ft-lab">Email</span><a class="ft-val" href="mailto:info@aswlaw.africa">info@aswlaw.africa</a></div></li>
+            <li class="ft-item"><span class="ft-ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div class="ft-txt"><span class="ft-lab">Hours</span><span class="ft-val">Mon to Fri: 9.00am to 5.00pm</span></div></li>
+          </ul>
+        </div>
+        <div class="ft-rule ft-r2" aria-hidden="true"></div>
+        <div class="ft-brand">
+          <a href="Main.dc.html" aria-label="ASW Law Advocates LLP, home"><img class="ft-logo" src="../assets/logo_light.png" alt="ASW Law Advocates LLP"></a>
+          <p class="ft-tag">We offer world-class legal representation.</p>
+        </div>
+        <nav class="ft-areas" aria-label="Areas of practice">
+          <h2 class="ft-ah">Areas of Practice</h2>
+          <ul class="ft-links">
+          <li><a href="Areas.dc.html">Dispute Resolution</a></li>
+          <li><a href="Areas.dc.html">Commercial and Corporate</a></li>
+          <li><a href="Areas.dc.html">Public Procurement and Tax</a></li>
+          <li><a href="Areas.dc.html">Property &amp; Real Estate</a></li>
+          <li><a href="Areas.dc.html">Private Client</a></li>
+          <li><a href="Areas.dc.html">Employment and Pensions</a></li>
+          </ul>
+        </nav>
+        <nav class="ft-menu" aria-label="Menu">
+          <h2 class="ft-ah">Menu</h2>
+          <ul class="ft-links">
+          <li><a href="Main.dc.html">Home</a></li>
+          <li><a href="About.dc.html">About Us</a></li>
+          <li><a href="Areas.dc.html">Areas Of Practice</a></li>
+          <li><a href="Insights.dc.html">Insights</a></li>
+          <li><a href="Book.dc.html">Book Appointment</a></li>
+          <li><a href="Contact.dc.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ft-rule"></div>
+      <div class="ft-sub">
+        <nav aria-label="Site pages"><ul class="ft-nl">
+          <li><a href="Main.dc.html">Home</a></li>
+          <li><a href="About.dc.html">About Us</a></li>
+          <li><a href="Areas.dc.html">Areas Of Practice</a></li>
+          <li><a href="Insights.dc.html">Insights</a></li>
+          <li><a href="Book.dc.html">Book Appointment</a></li>
+          <li><a href="Contact.dc.html">Contact Us</a></li>
+        </ul></nav>
+        <ul class="ft-legal">
+          <li><a href="FAQ.dc.html">Frequently Asked Questions</a></li>
+          <li><a href="Privacy.dc.html">Privacy Policy</a></li>
+          <li><a href="Terms.dc.html">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="ft-rule"></div>
+      <p class="ft-copy">&copy; Copyright 2026 ASW Law Advocates LLP. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5364}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: false, ai: 0, ti: 0 };
+  }
+  goArea(i) {
+    const t = document.getElementById('ar-track');
+    if (!t || i < 0 || i > 5 || !t.children[i]) return;
+    t.scrollTo({ left: t.children[i].offsetLeft - t.children[0].offsetLeft, behavior: 'smooth' });
+  }
+  goTeam(i) {
+    const t = document.getElementById('tm-track');
+    if (!t || i < 0 || i > 2 || !t.children[i]) return;
+    t.scrollTo({ left: t.children[i].offsetLeft - t.children[0].offsetLeft, behavior: 'smooth' });
+  }
+  renderVals() {
+    const open = this.state.open;
+    const ai = this.state.ai;
+    const ti = this.state.ti;
+    return {
+      open,
+      toggle: () => this.setState({ open: !this.state.open }),
+      burgerPath: open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16',
+      burgerLabel: open ? 'Close menu' : 'Open menu',
+      ai,
+      tc0: ti === 0 ? 'ta-l on' : 'ta-l',
+      tc1: ti === 1 ? 'ta-l on' : 'ta-l',
+      tc2: ti === 2 ? 'ta-l on' : 'ta-l',
+      tcur: String(ti + 1).padStart(2, '0'),
+      tFill: 'at-fill t' + ti,
+      tPrevCls: ti === 0 ? 'at-btn dis' : 'at-btn',
+      tNextCls: ti === 2 ? 'at-btn dis' : 'at-btn',
+      tPrevAria: ti === 0 ? 'true' : 'false',
+      tNextAria: ti === 2 ? 'true' : 'false',
+      tPrev: () => this.goTeam(this.state.ti - 1),
+      tNext: () => this.goTeam(this.state.ti + 1),
+      onTeam: (e) => {
+        const t = e.currentTarget || e.target;
+        if (!t || !t.children || t.children.length < 2) return;
+        const step = t.children[1].offsetLeft - t.children[0].offsetLeft;
+        const i = Math.max(0, Math.min(2, Math.round(t.scrollLeft / step)));
+        if (i !== this.state.ti) this.setState({ ti: i });
+      },
+      cur: String(ai + 1).padStart(2, '0'),
+      fillCls: 'at-fill s' + ai,
+      prevCls: ai === 0 ? 'at-btn dis' : 'at-btn',
+      nextCls: ai === 5 ? 'at-btn dis' : 'at-btn',
+      prevAria: ai === 0 ? 'true' : 'false',
+      nextAria: ai === 5 ? 'true' : 'false',
+      goPrev: () => this.goArea(this.state.ai - 1),
+      goNext: () => this.goArea(this.state.ai + 1),
+      onTrack: (e) => {
+        const t = e.currentTarget || e.target;
+        if (!t || !t.children || t.children.length < 2) return;
+        const step = t.children[1].offsetLeft - t.children[0].offsetLeft;
+        const i = Math.max(0, Math.min(5, Math.round(t.scrollLeft / step)));
+        if (i !== this.state.ai) this.setState({ ai: i });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
